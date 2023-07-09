@@ -2,7 +2,7 @@
 
 int main()
 {
-	Dictionary dictionary;
-	dictionary.run();
+	Trie ev;
+	ev.loadDataSet(EV);
 	return 0;
 }
