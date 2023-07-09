@@ -17,13 +17,7 @@ void Trie::buildTrie(std::wstring keyWord, std::vector<std::wstring> wordDef)
 	{
 		cur->isWord = 1;
 		cur->word.keyWord = keyWord;
-	}
-	reverse(wordDef.begin(), wordDef.end());
-	while (!wordDef.empty())
-	{
-		std::wstring item = wordDef.back();
-		cur->word.definition.push_back(item);
-		wordDef.pop_back();
+		cur->word.definition = wordDef;
 	}
 }
 
