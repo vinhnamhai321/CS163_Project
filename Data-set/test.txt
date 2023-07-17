@@ -1,128 +1,40 @@
-@washy
-/'wɔʃi/
-*tính từ
-- loãng, nhạt, vô vị
-=washy soup+ cháo loãng
-=washy food+ thức ăn nhạt
-=washy wine+ rượu nhạt
-- nhạt, bạc thếch (màu sắc)
-=a washy colour+ màu bạc thếch
-- không mặn mà, nhạt nhẽo; lòng thòng
-=a washy style+ văn lòng thòng nhạt nhẽo
-@'cellist
+@maltreat
+/mæl'tri:t/
+*transitive verb
+- To treat ill; to abuse; to treat roughly.
+@maltreated
+/mælˈtriːtɪd/
+*imp. & past participle
+- of Maltreat
+@maltreating
 //
-- người chơi viôlôngxen, người chơi xelô
-@'chutist
+*present participle & verbal noun
+- of Maltreat
+@maltster
 //
-*danh từ
-- (vt của parachutist) lính nhảy dù
-@'d
+*noun
+- A maltman.
+@maltworm
 //
-- (thông tục)
-- (viết tắt) của had,  should,  would
-@'em
+*noun
+- A tippler.
+@malty
 //
-*danh từ
-- (thông tục) (viết tắt) của them
-@'gainst
+*adjective
+- Consistingor like malt.
+@malum
 //
-*giới từ
-- (thơ ca) (như) against
-@'ll
+*noun
+- An evil. See Mala.
+@malvaceous
+/mæl'veiʃəs/
+*adjective
+- Pertaining toor resembling a natural order of plants (Malvaceae) of which the mallow is the type. The cotton plant hollyhock and abutilon are of this order and the baobab and the silk-cotton trees are now referred to it.
+@malversation
+/,mælvə:'seiʃn/
+*noun
+- Evil conduct; fraudulent practices; misbehaviorcorruption or extortion in office.
+@malvesie
 //
-- (vt của will)
-@'s
-//
-- (viết tắt) của is,  has,  us,  does
-- (thông tục) (như) is
-= it 's raining+trời mưa
-= what 's the matter?+cái gì đấy?
-= she 's gone+cô ta đã đi khỏi
-- (thông tục) (như) has
-= he 's done it+anh ấy đã làm việc đó rồi
-- (thông tục) (như) us
-- let 's go
-- nào chúng ta đi thôi
-- (thông tục) (như) does
-= what 's he say about it?+ý kiến của anh ấy về việc đó như thế nào?
-@'shun
-//
-- interj
-- ((viết tắt) của attention) nghiêm!
-@'tec
-//
-- xem tec
-@'tis
-//
-- (vt của it is)
-@'twas
-//
-- (vt của it was)
-@'tween
-//
-*giới từ
-- (vt của between)
-@'twere
-//
-- (vt của it were)
-@'twill
-//
-- (viết tắt) của it will
-@'twixt
-//
-*giới từ
-- (vt của betwixt)
-@1 to 1 relationship
-//
-- (Tech) quan hệ 1 đối 1
-@1 to many relationship
-//
-- (Tech) quan hệ 1 đối nhiều
-@1-byte character
-//
-- (Tech) ký tự 1 bai
-@1-byte character code
-//
-- (Tech) mã ký tự 1 bai
-@1-byte character set
-//
-- (Tech) bộ ký tự 1 bai
-@1-byte character string
-//
-- (Tech) chuỗi ký tự 1 bai
-@2-way device
-//
-- (Tech) thiết bị 2 chiều/thu phát
-@2d configuration
-//
-- (Tech) cấu hình 2 chiều, cấu hình phẳng
-@2d image
-//
-- (Tech) ảnh 2 chiều, ảnh phẳng
-@7-bit ascii code
-//
-- (Tech) mã ASCII 7 bít
-@7-bit ascii code set
-//
-- (Tech) bộ mã ASCII 7 bít
-@8-bit character
-//
-- (Tech) ký tự 8 bít
-@8-bit character code
-//
-- (Tech) mã ký tự 8 bít
-@8-bit character set
-//
-- (Tech) bộ ký tự 8 bít
-@8-bit character string
-//
-- (Tech) chuỗi ký tự 8 bít
-@8-bit microcomputer
-//
-- (Tech) máy vi điện toán 8 bít, máy vi tính 8 bít [TN]
-@8-bit microprocessor
-//
-- (Tech) bộ vi xử lý 8 bít
-@8-bit personal computer
-//
-- (Tech) máy điện toán cá nhân 8 bít
+*noun
+- Malmsey wine. See Malmsey.
