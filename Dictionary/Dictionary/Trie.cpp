@@ -3,15 +3,15 @@
 #include <unordered_set>
 void Trie::buildTrie(std::wstring keyWord, std::vector<std::wstring> wordDef)
 {
-	Trie* cur{};
+	Node* cur = root;
 	auto len = keyWord.length();
 	for (int pos = 0; pos < len; ++pos)
 	{
 		wchar_t letter = keyWord[pos];
 		int index = getIndex(letter);
-		if (!character[index])
-		character[index] = new Trie;
-		cur = character[index];
+		if (!cur->character[index])
+			cur->character[index] = new Node;
+		cur = cur->character[index];
 	}
 	if(cur)
 	{
@@ -63,4 +63,34 @@ int getIndex(wchar_t letter)
 		}
 	}
 	return letter - L'a';
+}
+
+void Trie::deleteTrie(Node*& root)
+{
+	if (!root)
+		delete root;
+	else
+	{
+		for (int i = 0; i < 38; ++i)
+			deleteTrie(root->character[i]);
+		delete root;
+	}
+}
+
+std::pair<Word,bool> Trie::search(std::wstring keyWord)
+{
+	Word tmp{};
+	Node* cur = root;
+	int len = keyWord.length();
+	for (int i = 0; i < len; ++i)
+	{
+		wchar_t letter = keyWord[i];
+		int index = getIndex(letter);
+		cur = cur->character[index];
+		if (!cur)
+			return std::make_pair(tmp, 0);
+	}
+	if (!cur->isWord)
+		return std::make_pair(tmp, 0);
+	return std::make_pair(cur->word, 1);
 }

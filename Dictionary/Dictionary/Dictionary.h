@@ -1,6 +1,5 @@
 #pragma once
 #include "Trie.h"
-#include <utility>
 class Dictionary
 {
 public:
@@ -8,6 +7,6 @@ public:
 };
 
 //Path of data-set
-#define EV "../../Data-set/EV_final.txt"
+#define EV "../../Data-set/EE_final.txt"
 
 //Function load data-set
