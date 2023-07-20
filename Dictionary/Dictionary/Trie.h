@@ -1,4 +1,5 @@
 #pragma once
+
 #include <string>
 #include <vector>
 #include <fstream>
@@ -8,25 +9,36 @@
 #include <fcntl.h>
 #include <utility>
 #include <iostream>
-struct Word
+#include "WordDef.h"
+
+struct WordDef
 {
+	//constructor
+	WordDef(std::wstring KeyWord, std::vector<std::wstring> WordDef) :keyWord(KeyWord), definition(WordDef) {}
+	//function
 	std::wstring keyWord;
 	std::vector<std::wstring> definition;
 };
+
 struct Node
 {
 	Node* character[39]{};
 	bool isWord{};
-	Word word;
+	WordDef* word{};
 };
+
 class Trie
 {
 public:
+
+	//function
 	void deleteTrie(Node*& root);
 	void buildTrie(std::wstring keyWord, std::vector<std::wstring> wordDef);
 	void loadDataSet(std::string path);		//load EV and EE file
-	std::pair<Word,bool> search(std::wstring keyWord);
 	Node* root = new Node;
 };
 
 int getIndex(wchar_t letter);				//return index for trie
+
+WordDef* search(Trie tree, std::wstring keyWord);
+

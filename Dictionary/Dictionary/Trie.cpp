@@ -16,8 +16,7 @@ void Trie::buildTrie(std::wstring keyWord, std::vector<std::wstring> wordDef)
 	if(cur)
 	{
 		cur->isWord = 1;
-		cur->word.keyWord = keyWord;
-		cur->word.definition = wordDef;
+		cur->word = new WordDef(keyWord, wordDef);
 	}
 }
 
@@ -77,10 +76,12 @@ void Trie::deleteTrie(Node*& root)
 	}
 }
 
-std::pair<Word,bool> Trie::search(std::wstring keyWord)
+
+
+
+WordDef* search(Trie tree, std::wstring keyWord)
 {
-	Word tmp{};
-	Node* cur = root;
+	Node* cur = tree.root;
 	int len = keyWord.length();
 	for (int i = 0; i < len; ++i)
 	{
@@ -88,9 +89,9 @@ std::pair<Word,bool> Trie::search(std::wstring keyWord)
 		int index = getIndex(letter);
 		cur = cur->character[index];
 		if (!cur)
-			return std::make_pair(tmp, 0);
+			return nullptr;
 	}
 	if (!cur->isWord)
-		return std::make_pair(tmp, 0);
-	return std::make_pair(cur->word, 1);
+		return nullptr;
+	return cur->word;
 }
