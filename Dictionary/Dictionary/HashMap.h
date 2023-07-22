@@ -1,9 +1,7 @@
 #pragma once
 #include <string>
-#include "Trie.h"
 //base mode
-const long long base = 1e6 + 1;
-extern long long power[1000001];
+const long long base = (long long) 1e6 + 1;
 
 //function
 long long setIndex(std::wstring s);

@@ -4,4 +4,5 @@ int main()
 {
 	Dictionary dictionary;
 	dictionary.run();
+	return 0;
 }

@@ -1,6 +1,8 @@
 ﻿#include "Trie.h"
 #include "Dictionary.h"
 #include <unordered_set>
+#include "HashMap.h"
+
 extern Trie ev, ee, ve;
 void Trie::buildTrie(std::wstring keyWord, std::vector<std::wstring> wordDef)
 {
@@ -35,7 +37,11 @@ void Trie::loadDataSet(std::string path)
 		std::wstring keyWord = get.substr(1, get.length() - 1);	//remove '@' character from key word
 		getline(fin, get);
 		for (; !fin.eof() && get[0] != '@'; getline(fin, get))	//set condition whenever meet new key word
-			wordDef.push_back(get);		//push all definition of current key word
+        {
+            if (get[0] == L'-')
+                myMap.push(get, keyWord);
+            wordDef.push_back(get);		//push all definition of current key word
+        }
 		buildTrie(keyWord, wordDef);	//create new key word in trie
 	}
 }
@@ -278,10 +284,21 @@ void Trie::deleteTrie(Node*& root)
 	}
 }
 
-WordDef* searchKeyWord(Trie tree, std::wstring keyWord)
+WordDef* search(int data, std::wstring keyWord)
+{
+    if (data == 1)
+        return searchKeyWord(ee, keyWord);
+    if (data == 2)
+        return searchKeyWord(ev, keyWord);
+    if (data == 3)
+        return searchKeyWord(ve, keyWord);
+    return nullptr;
+}
+
+WordDef* searchKeyWord(Trie& tree, std::wstring keyWord)
 {
 	Node* cur = tree.root;
-	int len = keyWord.length();
+	size_t len = keyWord.length();
 	for (int i = 0; i < len; ++i)
 	{
 		wchar_t letter = keyWord[i];
@@ -293,22 +310,6 @@ WordDef* searchKeyWord(Trie tree, std::wstring keyWord)
 	if (!cur->isWord)
 		return nullptr;
 	return cur->word;
-}
-
-WordDef* search(int data, std::wstring keyWord)
-{
-    switch (data)
-    {
-    case 1:
-        return searchKeyWord(ee, keyWord);
-        break;
-    case 2:
-        return searchKeyWord(ev, keyWord);
-        break;
-    case 3:
-        return searchKeyWord(ve, keyWord);
-        break;
-    }
 }
 
 void deleteTree()
