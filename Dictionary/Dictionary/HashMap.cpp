@@ -1,6 +1,8 @@
 #include "HashMap.h"
+#include "Trie.h"
+
 long long setIndex(std::wstring s) {
-    int len = s.length();
+    size_t len = s.length();
     long long prev = (long long)getIndex(s[0]);
     long long ans = prev;
     for (int i = 1; i < len; ++i) ans = (prev * 26 + (long long)getIndex(s[i]) % base);
@@ -9,7 +11,7 @@ long long setIndex(std::wstring s) {
 
 void HashMap::push(std::wstring s, std::wstring keyWord)
 {
-    int idx = setIndex(s);
+    long long idx = setIndex(s);
     if (!myTable[idx])
         myTable[idx] = new Table(s, keyWord, nullptr);
     else
@@ -24,7 +26,7 @@ void HashMap::resolveCollision(std::wstring s, std::wstring keyWord, int idx)
 
 std::wstring HashMap::search(std::wstring s)
 {
-    int idx = setIndex(s);
+    long long idx = setIndex(s);
     for (Table* cur = myTable[idx]; cur; cur = cur->pNext)
     {
         if (s.compare(cur->def) == 0)

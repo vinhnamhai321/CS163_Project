@@ -1,9 +1,7 @@
 #include "Dictionary.h"
 #include "Trie.h"
-#include <iostream>
 
 Trie ev, ee, ve;
-
 void Dictionary::run()
 {
 	build();
