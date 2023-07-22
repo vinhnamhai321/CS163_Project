@@ -46,7 +46,8 @@ int Dictionary::print_MainMenu() {
     std::wcout << "1. Search for key word.\n";
     std::wcout << "2. Search for definition.\n";
     std::wcout << "3. Add new word.\n";
-    std::wcout << "4. Return back to previous menu.\n";
+    std::wcout << "4. Get random word & definition.\n";
+    std::wcout << "0. Return back to previous menu.\n";
     std::wcout << "Enter your choice: ";
 
     std::wstring input;
@@ -98,6 +99,45 @@ void Dictionary::addWord(std::wstring keyWord, std::vector<std::wstring> wordDef
     tree->buildTrie(keyWord, wordDef);
 }
 
+// Random function
+std::mt19937 rng(std::chrono::steady_clock::now().time_since_epoch().count());
+
+void Dictionary::getRandomWord() {
+    Trie *tree = getTree(this->currentTree);
+    if (tree == nullptr)
+        return;
+
+    Node *curNode = tree->root;
+    std::vector<short> indices;
+    while (true) {
+        // Get available indices
+        indices.clear();
+        for (short i = 0; i < 106; ++i)
+            if (curNode->character[i])
+                indices.push_back(i);
+
+        // If no available indices, break
+        if (indices.empty())
+            break;
+
+        // Randomly choose an index
+        int index = indices[rng() % indices.size()];
+        curNode = curNode->character[index];
+
+        // If current node is a word, randomly choose to print or not
+        if (curNode->isWord) {
+            if ((rng() % 1337) >= 668) {
+                std::wcout << *(curNode->word) << '\n';
+                return;
+            }
+        }
+    }
+
+    // If curNode is a word, print it
+    if (curNode->isWord)
+        std::wcout << *(curNode->word) << '\n';
+}
+
 void Dictionary::process() {
     while (true) {
         currentTree = print_SelectMenu();
@@ -123,10 +163,7 @@ void Dictionary::process() {
                 if (!find)
                     std::wcout << "Can not find this word in dictionary\n";
                 else {
-                    std::wcout << "Word: " << find->keyWord << std::endl;
-                    for (std::wstring item : find->definition)
-                        std::wcout << item << std::endl;
-                    std::wcout << std::endl;
+                    std::wcout << *find << '\n';
                 }
                 break;
             }
@@ -147,6 +184,10 @@ void Dictionary::process() {
 			}*/
             case 3:
                 print_addWord();
+                break;
+
+            case 4:
+                getRandomWord();
                 break;
 
             default:

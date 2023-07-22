@@ -12,12 +12,21 @@
 
 #include "HashMap.h"
 struct WordDef {
-    //constructor
+    // Constructor
     WordDef(std::wstring KeyWord, std::vector<std::wstring> WordDef) : keyWord(KeyWord), definition(WordDef) {
     }
-    //function
+
+    // Function
     std::wstring keyWord;
     std::vector<std::wstring> definition;
+
+    // Ostream <<
+    friend std::wostream &operator<<(std::wostream &os, const WordDef &word) {
+        os << "Word: " << word.keyWord << std::endl;
+        for (std::wstring item : word.definition)
+            os << item << std::endl;
+        return os;
+    }
 };
 
 struct Node {

@@ -1,4 +1,6 @@
 #pragma once
+#include <chrono>
+#include <random>
 #include <string>
 #include <vector>
 
@@ -16,6 +18,7 @@ private:
 
     bool print_addWord();
     void addWord(std::wstring keyWord, std::vector<std::wstring> wordDef);
+    void getRandomWord();
 };
 
 // Path of data-set
