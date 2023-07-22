@@ -9,8 +9,6 @@
 #include <fcntl.h>
 #include <utility>
 #include <iostream>
-#include "WordDef.h"
-
 struct WordDef
 {
 	//constructor
@@ -22,7 +20,7 @@ struct WordDef
 
 struct Node
 {
-	Node* character[39]{};
+	Node* character[106]{};
 	bool isWord{};
 	WordDef* word{};
 };
@@ -40,5 +38,6 @@ public:
 
 int getIndex(wchar_t letter);				//return index for trie
 
-WordDef* search(Trie tree, std::wstring keyWord);
-
+WordDef* searchKeyWord(Trie tree, std::wstring keyWord);
+WordDef* search(int data, std::wstring keyWord);
+void deleteTree();

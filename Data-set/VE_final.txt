@@ -30022,10 +30022,10 @@
 *noun
 - ostrich
 =Chim Đà Điểu (Ostrivhes)+cassowary
-@Đà lạt
+@đà lạt
 //
 - Xem Lâm Đồng
-@Đà nẵng
+@dà nẵng
 //
 - Xem Quảng Nam-Đà Nẵng
 @đả
@@ -35362,7 +35362,7 @@
 - Solidify
 -Dense with people
 =Nhà ga đông đặc những người đi và đến+The railway station was dense with people who were leaving or arriving
-@Đông Đô
+@đông đô
 //
 - Ancient name of Hà Nội
 @đông đủ

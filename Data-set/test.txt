@@ -1,40 +1,10 @@
-@maltreat
-/mæl'tri:t/
-*transitive verb
-- To treat ill; to abuse; to treat roughly.
-@maltreated
-/mælˈtriːtɪd/
-*imp. & past participle
-- of Maltreat
-@maltreating
+@huyện đoàn
 //
-*present participle & verbal noun
-- of Maltreat
-@maltster
+- District Youth Union(communist)
+@huyện đội
 //
-*noun
-- A maltman.
-@maltworm
+- District armed forces(communist)
+@huyện đường
 //
-*noun
-- A tippler.
-@malty
-//
-*adjective
-- Consistingor like malt.
-@malum
-//
-*noun
-- An evil. See Mala.
-@malvaceous
-/mæl'veiʃəs/
-*adjective
-- Pertaining toor resembling a natural order of plants (Malvaceae) of which the mallow is the type. The cotton plant hollyhock and abutilon are of this order and the baobab and the silk-cotton trees are now referred to it.
-@malversation
-/,mælvə:'seiʃn/
-*noun
-- Evil conduct; fraudulent practices; misbehaviorcorruption or extortion in office.
-@malvesie
-//
-*noun
-- Malmsey wine. See Malmsey.
+- (từ cũ; nghĩa cũ) District chief's yamen
+=Bị gọi đến huyện đường hầu kiện+To be summoned to the district chief's yamen in connection with a trial
