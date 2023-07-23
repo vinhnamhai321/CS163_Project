@@ -1,4 +1,6 @@
 #pragma once
+#include "Trie.h"
+#include <algorithm>
 #include <chrono>
 #include <random>
 #include <string>
@@ -15,10 +17,12 @@ public:
 private:
     int print_SelectMenu();
     int print_MainMenu();
-
     bool print_addWord();
+    void print_randomWord();
+
     void addWord(std::wstring keyWord, std::vector<std::wstring> wordDef);
-    void getRandomWord();
+    void meaningQuiz();
+    void keywordQuiz();
 };
 
 // Path of data-set

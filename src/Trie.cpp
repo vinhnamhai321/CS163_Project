@@ -49,6 +49,60 @@ void Trie::loadDataSet(std::string path) {
     }
 }
 
+void Trie::deleteTrie(Node *&root) {
+    if (!root)
+        return;
+    for (int i = 0; i < 106; ++i)
+        deleteTrie(root->character[i]);
+    delete root;
+}
+
+WordDef *Trie::getRandomWord() {
+    // Random function
+    std::mt19937 rng(std::chrono::steady_clock::now().time_since_epoch().count());
+
+    Node *curNode = root;
+    std::vector<short> indices;
+    while (true) {
+        // Get available indices
+        indices.clear();
+        for (short i = 0; i < 106; ++i)
+            if (curNode->character[i]) {
+                // Perfer [a-z0-9] more than other characters
+                if (i <= 36)
+                    indices.push_back(i);
+                else if ((rng() % 1337) >= 1000)
+                    indices.push_back(i);
+            }
+
+        // If no available indices, this is end of word or random went to sparse tree
+        if (indices.empty()) {
+            // Push remaining subtree
+            for (short i = 37; i < 106; ++i)
+                if (curNode->character[i])
+                    indices.push_back(i);
+            // If still no available indices, this is end of word
+            if (indices.empty())
+                break;
+        }
+
+        // Randomly choose an index
+        std::shuffle(indices.begin(), indices.end(), rng);
+        int index = indices[rng() % indices.size()];
+        curNode = curNode->character[index];
+
+        // If current node is a word, randomly choose to return or not
+        if (curNode->isWord) {
+            if ((rng() % 1337) >= 1200) {
+                return (curNode->word);
+            }
+        }
+    }
+
+    // If curNode is a word, return it
+    return (curNode->word);
+}
+
 int getIndex(wchar_t letter) {
     if (letter >= L'a' && letter <= L'z')
         return letter - L'a';
@@ -270,16 +324,6 @@ int getIndex(wchar_t letter) {
     }
 
     return -1;
-}
-
-void Trie::deleteTrie(Node *&root) {
-    if (!root)
-        return;
-    else {
-        for (int i = 0; i < 106; ++i)
-            deleteTrie(root->character[i]);
-        delete root;
-    }
 }
 
 Trie *getTree(int data) {

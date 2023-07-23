@@ -37,17 +37,21 @@ struct Node {
 
 class Trie {
 public:
-    //function
-    void deleteTrie(Node *&root);
-    void buildTrie(std::wstring keyWord, std::vector<std::wstring> wordDef);
-    void loadDataSet(std::string path); //load EV and EE file
     Node *root = new Node;
 
-    //Map
+    // Tree Main Function
+    void deleteTrie(Node *&root);
+    void buildTrie(std::wstring keyWord, std::vector<std::wstring> wordDef);
+    void loadDataSet(std::string path); // load EV and EE file
+
+    // Tree Support Function
+    WordDef *getRandomWord();
+
+    // Map
     HashMap myMap;
 };
 
-int getIndex(wchar_t letter); //return index for trie
+int getIndex(wchar_t letter); // return index for trie
 
 WordDef *searchKeyWord(Trie &tree, std::wstring keyWord);
 
