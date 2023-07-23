@@ -1,26 +1,15 @@
 ﻿#include"HomePage.h"
 #include"HandmadeFunc.h"
 #include"History.h"
+#include"WordDefinition.h"
 #include<locale>
 #include<codecvt>
-
 HomePage::HomePage(data* data) : _data(data), dataBoxHidden(1), blink(1)
 {}
 HomePage::~HomePage()
 {}
 void HomePage::init()
 {
-	_data->_assets->addFont(LIGHT, "Fonts\\Light.ttf");
-	_data->_assets->addFont(HELVETICA_BOLD, "Fonts\\Helvetica-Bold.ttf");
-	_data->_assets->addFont(CHIVOMONO_LIGHT, "Fonts\\ChivoMono-Light.ttf");
-	_data->_assets->addFont(CHIVOMONO_REGULAR, "Fonts\\ChivoMono-Regular.ttf");
-	_data->_assets->addFont(KANIT, "Fonts\\Kanit-Regular.ttf");
-	_data->_assets->addTexture(DICTIONARY_ICON, "Img\\dictionaryIcon.png");
-	_data->_assets->addTexture(SEARCH_ICON, "Img\\searchIcon.png");
-	_data->_assets->addTexture(DOWN_ARR, "Img\\downArr.png");
-	_data->_assets->addTexture(BACK_ARR, "Img\\backArr.png");
-	_data->_assets->addTexture(HISTORY_CLOCK, "Img\\historyClock.png");
-	_data->_assets->addTexture(DELETE_ICON, "Img\\deleteIcon.png");
 	time = sf::Time::Zero;
 
 	historyFile.open(L"Resource\\History.txt", std::ios::app);
@@ -150,6 +139,14 @@ void HomePage::init()
 		dataBoxContent[i].setFont(_data->_assets->getFont(CHIVOMONO_LIGHT));
 		dataBoxContent[i].setFillColor(sf::Color::Black);
 	}
+	
+	//Set status 
+	statusOn = 0;
+	status = createText(L"Not found!",
+		searchBox.getPosition().x - searchBox.getSize().x / 2 + 10,
+		searchBox.getPosition().y + 50, 20);
+	status.setFont(_data->_assets->getFont(CHIVOMONO_LIGHT));
+	status.setFillColor(sf::Color::Red);
 }
 void HomePage::processInput()
 {
@@ -169,7 +166,7 @@ void HomePage::processInput()
 				translateY = -30;
 				windowTranslateY -= 30;
 			}
-			if (event.mouseWheelScroll.delta < 0 && windowTranslateY < 450) {
+			if (event.mouseWheelScroll.delta < 0 && windowTranslateY < 300) {
 				view.move(sf::Vector2f(0, 30));
 				translateY = 30;
 				windowTranslateY += 30;
@@ -311,7 +308,6 @@ void HomePage::update()
 
 	//Text  
 	dataSet.setString(getDataSet);
-
 	searchBoxText.setString(getSearchBoxText);
 	((blink && searchBoxFocus) ? cursor.setString("|") : cursor.setString(""));
 	
@@ -368,8 +364,17 @@ void HomePage::update()
 	}
 	if (searchIconClick)
 	{
-		historyFile << getSearchBoxText << std::endl;
-		getSearchBoxText.clear();
+		if (search(getDataset(dataSet.getString(), _data), getSearchBoxText) != nullptr)
+		{
+			std::wstring dtset = dataSet.getString();
+			historyFile << getSearchBoxText << "(" << dtset << ")" << std::endl;
+			_data->_states->addState(new WordDefinition(_data, search(getDataset(dataSet.getString(), _data), getSearchBoxText)));
+			getSearchBoxText.clear();
+		}
+		else
+		{
+			statusOn = 1;
+		}
 		searchIconClick = 0;
 	}
 }
@@ -393,6 +398,10 @@ void HomePage::draw()
 		_data->_window->draw(dataBoxContent[0]);
 		_data->_window->draw(dataBoxContent[1]);
 		_data->_window->draw(dataBoxContent[2]);
+	}
+	if (statusOn)
+	{
+		_data->_window->draw(status);
 	}
 	//navbar
 	_data->_window->draw(navbar);

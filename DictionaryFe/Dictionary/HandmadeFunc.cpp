@@ -3,6 +3,7 @@
 #include<vector>
 #include<locale>
 #include<codecvt>
+#include<iostream>
 sf::RectangleShape createRectangleShape(float width, float height, float x, float y)
 {
 	sf::RectangleShape shape;
@@ -44,4 +45,18 @@ void removeWord(std::wstring word, std::wstring path)
 	}
 	fout.close();
 }
-
+Trie getDataset(std::wstring dataset, data* _data)
+{
+	if (dataset == L"Eng-Eng")
+	{
+		return _data->ee;
+	}
+	else if (dataset == L"Eng-Vi")
+	{
+		return _data->ev;
+	}
+	else if (dataset == L"Vi-Eng")
+	{
+		return _data->ve;
+	}
+}

@@ -1,12 +1,11 @@
 #pragma once
 #include"SFML/Graphics.hpp"
-
+#include"Trie.h"
+#include"system.h"
 sf::RectangleShape createRectangleShape(float width, float height, float x = 0, float y = 0);
-
 sf::Text createText(std::wstring string, float x, float y, int size = 30);
-
 template<class hover> 
-bool isHover(hover obj, sf::Window& data, int translate)
+bool isHover(hover obj, sf::Window& data, int translate = 0)
 {
 	bool isHover;
 	isHover = (obj.getGlobalBounds()
@@ -20,6 +19,9 @@ bool isFocus(focus obj, sf::Window& data, int translate)
 	return isHover(obj, data, translate);
 }
 void removeWord(std::wstring word, std::wstring path);
+Trie getDataset(std::wstring dataset, data* _data);
+
+
 
 
 

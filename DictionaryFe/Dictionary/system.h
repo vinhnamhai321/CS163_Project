@@ -1,12 +1,15 @@
 #pragma once
 #include"assetManager.h"
 #include"stateMachine.h"
-
+#include "Trie.h"
 struct data
 {
 	assetManager* _assets;
 	stateMachine* _states;
 	sf::RenderWindow* _window;
+	Trie ee, ev, ve;
+	bool eeDone, evDone, veDone;
+	
 	data()
 	{
 		_assets = new assetManager;

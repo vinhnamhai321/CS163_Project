@@ -60,6 +60,9 @@ private:
 	bool dataBoxContentHover[3];
 	bool dataBoxHidden;
 	std::wstring getDataSet;
+
+	sf::Text status; 
+	bool statusOn;
 public:
 	HomePage(data* data);
 	~HomePage();
