@@ -48,3 +48,5 @@ WordDef* searchKeyWord(Trie& tree, std::wstring keyWord);
 WordDef* search(int data, std::wstring keyWord);
 
 void deleteTree();
+
+void crawl(std::wofstream& fout, Node*& cur);

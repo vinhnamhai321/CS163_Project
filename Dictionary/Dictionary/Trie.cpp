@@ -27,10 +27,14 @@ void Trie::loadDataSet(std::string path)
 {	
 	std::wifstream fin(path);
 	if (!fin.is_open())
-		std::cout << "Error to load file\n";
+		std::wcout << "Error to load file\n";
 	fin.imbue(std::locale(std::locale::empty(), new std::codecvt_utf8<wchar_t>));	//set input for UTF8 character from file
 	std::wstring get;		//get first key word
-	getline(fin, get);
+    while (!fin.eof())
+    {
+        getline(fin, get);
+    }
+	/*getline(fin, get);
 	while (!fin.eof())
 	{
 		std::vector<std::wstring> wordDef;
@@ -43,7 +47,7 @@ void Trie::loadDataSet(std::string path)
             wordDef.push_back(get);		//push all definition of current key word
         }
 		buildTrie(keyWord, wordDef);	//create new key word in trie
-	}
+	}*/
 }
 
 int getIndex(wchar_t letter)
@@ -317,4 +321,19 @@ void deleteTree()
     ee.deleteTrie(ee.root);
     ev.deleteTrie(ev.root);
     ve.deleteTrie(ve.root);
+}
+
+void crawl(std::wofstream& fout, Node*& cur)
+{
+    if (!cur)
+        return;
+    if (cur->isWord)
+    {
+        std::wstring s;
+        for (std::wstring item : cur->word->definition)
+            s += item;
+        fout << L"@" << cur->word->keyWord << s << std::endl;
+    }
+    for (int i = 0; i < 106; ++i)
+        crawl(fout, cur->character[i]);
 }

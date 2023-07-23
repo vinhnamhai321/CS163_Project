@@ -18,6 +18,6 @@ struct HashMap
 {
     Table* myTable[1000001]{};
     void push(std::wstring s, std::wstring keyWord);
-    void resolveCollision(std::wstring s, std::wstring keyWord, int idx);
+    void resolveCollision(std::wstring s, std::wstring keyWord, long long idx);
     std::wstring search(std::wstring s);
 };
