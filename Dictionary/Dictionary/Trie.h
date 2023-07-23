@@ -1,14 +1,16 @@
 #pragma once
 
+#include <iostream>
+#include <fstream>
+
 #include <string>
 #include <vector>
-#include <fstream>
+
 #include <codecvt>
-#include <iostream>
 #include <io.h>
 #include <fcntl.h>
-#include <utility>
-#include <iostream>
+
+#include "HashMap.h"
 struct WordDef
 {
 	//constructor
@@ -34,10 +36,17 @@ public:
 	void buildTrie(std::wstring keyWord, std::vector<std::wstring> wordDef);
 	void loadDataSet(std::string path);		//load EV and EE file
 	Node* root = new Node;
+
+	//Map
+	HashMap myMap;
 };
 
 int getIndex(wchar_t letter);				//return index for trie
 
-WordDef* searchKeyWord(Trie tree, std::wstring keyWord);
+WordDef* searchKeyWord(Trie& tree, std::wstring keyWord);
+
 WordDef* search(int data, std::wstring keyWord);
+
 void deleteTree();
+
+void crawl(std::wofstream& fout, Node*& cur);

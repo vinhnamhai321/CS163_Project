@@ -1,6 +1,8 @@
 ﻿#include "Trie.h"
 #include "Dictionary.h"
 #include <unordered_set>
+#include "HashMap.h"
+
 extern Trie ev, ee, ve;
 void Trie::buildTrie(std::wstring keyWord, std::vector<std::wstring> wordDef)
 {
@@ -25,19 +27,27 @@ void Trie::loadDataSet(std::string path)
 {	
 	std::wifstream fin(path);
 	if (!fin.is_open())
-		std::cout << "Error to load file\n";
+		std::wcout << "Error to load file\n";
 	fin.imbue(std::locale(std::locale::empty(), new std::codecvt_utf8<wchar_t>));	//set input for UTF8 character from file
 	std::wstring get;		//get first key word
-	getline(fin, get);
+    while (!fin.eof())
+    {
+        getline(fin, get);
+    }
+	/*getline(fin, get);
 	while (!fin.eof())
 	{
 		std::vector<std::wstring> wordDef;
 		std::wstring keyWord = get.substr(1, get.length() - 1);	//remove '@' character from key word
 		getline(fin, get);
 		for (; !fin.eof() && get[0] != '@'; getline(fin, get))	//set condition whenever meet new key word
-			wordDef.push_back(get);		//push all definition of current key word
+        {
+            if (get[0] == L'-')
+                myMap.push(get, keyWord);
+            wordDef.push_back(get);		//push all definition of current key word
+        }
 		buildTrie(keyWord, wordDef);	//create new key word in trie
-	}
+	}*/
 }
 
 int getIndex(wchar_t letter)
@@ -278,10 +288,21 @@ void Trie::deleteTrie(Node*& root)
 	}
 }
 
-WordDef* searchKeyWord(Trie tree, std::wstring keyWord)
+WordDef* search(int data, std::wstring keyWord)
+{
+    if (data == 1)
+        return searchKeyWord(ee, keyWord);
+    if (data == 2)
+        return searchKeyWord(ev, keyWord);
+    if (data == 3)
+        return searchKeyWord(ve, keyWord);
+    return nullptr;
+}
+
+WordDef* searchKeyWord(Trie& tree, std::wstring keyWord)
 {
 	Node* cur = tree.root;
-	int len = keyWord.length();
+	size_t len = keyWord.length();
 	for (int i = 0; i < len; ++i)
 	{
 		wchar_t letter = keyWord[i];
@@ -295,25 +316,24 @@ WordDef* searchKeyWord(Trie tree, std::wstring keyWord)
 	return cur->word;
 }
 
-WordDef* search(int data, std::wstring keyWord)
-{
-    switch (data)
-    {
-    case 1:
-        return searchKeyWord(ee, keyWord);
-        break;
-    case 2:
-        return searchKeyWord(ev, keyWord);
-        break;
-    case 3:
-        return searchKeyWord(ve, keyWord);
-        break;
-    }
-}
-
 void deleteTree()
 {
     ee.deleteTrie(ee.root);
     ev.deleteTrie(ev.root);
     ve.deleteTrie(ve.root);
+}
+
+void crawl(std::wofstream& fout, Node*& cur)
+{
+    if (!cur)
+        return;
+    if (cur->isWord)
+    {
+        std::wstring s;
+        for (std::wstring item : cur->word->definition)
+            s += item;
+        fout << L"@" << cur->word->keyWord << s << std::endl;
+    }
+    for (int i = 0; i < 106; ++i)
+        crawl(fout, cur->character[i]);
 }
