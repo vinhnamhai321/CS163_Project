@@ -18,7 +18,7 @@ void HashMap::push(std::wstring s, std::wstring keyWord)
         resolveCollision(s, keyWord, idx);
 }
 
-void HashMap::resolveCollision(std::wstring s, std::wstring keyWord, int idx)
+void HashMap::resolveCollision(std::wstring s, std::wstring keyWord, long long idx)
 {
     Table* tmp = myTable[idx];
     myTable[idx] = new Table(s, keyWord, tmp);

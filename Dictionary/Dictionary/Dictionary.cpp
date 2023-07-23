@@ -5,17 +5,16 @@ Trie ev, ee, ve;
 void Dictionary::run()
 {
 	build();
+	//serialize();
 	process();
 }
 void Dictionary::build()
 {
 	(void)_setmode(_fileno(stdin), _O_U16TEXT);
 	(void)_setmode(_fileno(stdout), _O_U8TEXT);
-	//ee.loadDataSet(EE);
+	ee.loadDataSet(EE);
+	ev.loadDataSet(EV);
 	ve.loadDataSet(VE);
-	//ev.loadDataSet(EV);
-	//ee.deleteTrie(ee.root);
-	//ev.deleteTrie(ev.root);
 }
 
 void Dictionary::process()
@@ -86,3 +85,15 @@ void Dictionary::process()
 	}
 }
 
+void Dictionary::serialize()
+{
+	std::wofstream fout("../../Data/EE.txt");
+	if (!fout.is_open())
+	{
+		std::wcout << "Error to open file\n";
+		return;
+	}
+	fout.imbue(std::locale(std::locale::empty(), new std::codecvt_utf8<wchar_t>));
+	crawl(fout, ee.root);
+	fout.close();
+}
