@@ -3,7 +3,6 @@
 #include<locale>
 #include<codecvt>
 #include"WordDefinition.h"
-#include<iostream>
 History::History(data* data): _data(data)
 {}
 History::~History()
@@ -92,7 +91,7 @@ void History::processInput()
 				translateY = -30;
 				windowTranslateY -= 30;
 			}
-			if (event.mouseWheelScroll.delta < 0 && windowTranslateY < historyList.size() * 100 - 700) {
+			if (event.mouseWheelScroll.delta < 0 && windowTranslateY < historyList.size() * 100) {
 				view.move(sf::Vector2f(0, 30));
 				translateY = 30;
 				windowTranslateY += 30;
@@ -176,7 +175,7 @@ void History::update()
 			std::wstring word = line.substr(0, line.find('('));
 			historyFile.close();
 			historyListClick[i] = 0;
-			_data->_states->addState(new WordDefinition(_data, search(getDataset(dtset, _data), word)), 1);
+			_data->_states->addState(new WordDefinition(_data, search(getDataset(dtset, _data), word), dtset), 1);
 			
 		}
 	}

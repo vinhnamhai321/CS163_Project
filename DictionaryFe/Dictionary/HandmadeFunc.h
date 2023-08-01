@@ -14,12 +14,13 @@ bool isHover(hover obj, sf::Window& data, int translate = 0)
 	return isHover;
 }
 template<class focus>
-bool isFocus(focus obj, sf::Window& data, int translate)
+bool isFocus(focus obj, sf::Window& data, int translate = 0)
 {
 	return isHover(obj, data, translate);
 }
-void removeWord(std::wstring word, std::wstring path);
+void removeWord(std::wstring line, std::wstring path);
 Trie getDataset(std::wstring dataset, data* _data);
+bool existWord(std::wstring line, std::wstring path);
 
 
 

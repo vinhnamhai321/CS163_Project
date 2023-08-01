@@ -20,7 +20,7 @@ sf::Text createText(std::wstring string, float x, float y, int size)
 	text.setCharacterSize(size);
 	return text;
 }
-void removeWord(std::wstring word, std::wstring path)
+void removeWord(std::wstring line, std::wstring path)
 {
 	std::locale loc(std::locale(), new std::codecvt_utf8<wchar_t>);
 	std::wfstream fin(path, std::ios::in);
@@ -39,7 +39,7 @@ void removeWord(std::wstring word, std::wstring path)
 	fout.imbue(loc);
 	for (int i = 0; i < save.size(); i++)
 	{
-		if (save[i] == word)
+		if (save[i] == line)
 			continue;
 		fout << save[i] << std::endl;
 	}
@@ -59,4 +59,22 @@ Trie getDataset(std::wstring dataset, data* _data)
 	{
 		return _data->ve;
 	}
+}
+bool existWord(std::wstring line, std::wstring path)
+{
+	std::locale loc(std::locale(), new std::codecvt_utf8<wchar_t>);
+	std::wfstream fin(path, std::ios::in);
+	fin.imbue(loc);
+	std::wstring get;
+	while (!fin.eof())
+	{
+		getline(fin, get);
+		if (get == line)
+		{
+			fin.close();
+			return true;
+		}
+	}
+	fin.close();
+	return false;
 }

@@ -2,6 +2,8 @@
 #include"HandmadeFunc.h"
 #include"History.h"
 #include"WordDefinition.h"
+#include"FavList.h"
+#include"Confirm.h"
 #include<locale>
 #include<codecvt>
 HomePage::HomePage(data* data) : _data(data), dataBoxHidden(1), blink(1)
@@ -18,7 +20,6 @@ void HomePage::init()
 	//set view
 	view.setSize(sf::Vector2f(1600, 900));
 	view.setCenter(sf::Vector2f(_data->_window->getSize().x / 2, _data->_window->getSize().y / 2));
-	windowTranslateY = 0;
 	//Set navbar
 	navbar = createRectangleShape(_data->_window->getSize().x, 60);
 	navbar.setFillColor(sf::Color(29, 42, 87, 255));
@@ -158,31 +159,10 @@ void HomePage::processInput()
 		case sf::Event::Closed:
 			_data->_window->close();
 			break;
-		case sf::Event::MouseWheelScrolled:
-		{
-			int translateY = 0;
-			if (event.mouseWheelScroll.delta > 0 && windowTranslateY > 0) {
-				view.move(sf::Vector2f(0, -30));
-				translateY = -30;
-				windowTranslateY -= 30;
-			}
-			if (event.mouseWheelScroll.delta < 0 && windowTranslateY < 300) {
-				view.move(sf::Vector2f(0, 30));
-				translateY = 30;
-				windowTranslateY += 30;
-			}
-			navbar.move(sf::Vector2f(0, translateY));
-			favList.move(sf::Vector2f(0, translateY));
-			history.move(sf::Vector2f(0, translateY));
-			addWord.move(sf::Vector2f(0, translateY));
-			reset.move(sf::Vector2f(0, translateY));
-			quiz.move(sf::Vector2f(0, translateY));
-		}
-		break;
 		case sf::Event::MouseButtonPressed:
 			if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 			{
-				searchBoxFocus = isFocus(searchBox, *_data->_window, windowTranslateY);
+				searchBoxFocus = isFocus(searchBox, *_data->_window);
 				if (searchBoxFocus)
 				{
 					curPosX = sf::Mouse::getPosition(*_data->_window).x;
@@ -269,16 +249,16 @@ void HomePage::processInput()
 			break;
 		}
 		
-		favListHover = isHover(favList, *_data->_window, windowTranslateY);
-		historyHover = isHover(history, *_data->_window, windowTranslateY);
-		addWordHover = isHover(addWord, *_data->_window, windowTranslateY);
-		resetHover = isHover(reset, *_data->_window, windowTranslateY);
-		quizHover = isHover(quiz, *_data->_window, windowTranslateY);
-		searchIconHover = isHover(searchIconBox, *_data->_window, windowTranslateY);
-		downArrHover = isHover(downArr, *_data->_window, windowTranslateY);
+		favListHover = isHover(favList, *_data->_window);
+		historyHover = isHover(history, *_data->_window);
+		addWordHover = isHover(addWord, *_data->_window);
+		resetHover = isHover(reset, *_data->_window);
+		quizHover = isHover(quiz, *_data->_window);
+		searchIconHover = isHover(searchIconBox, *_data->_window);
+		downArrHover = isHover(downArr, *_data->_window);
 		for (int i = 0; i < 3; i++)
 		{
-			dataBoxContentHover[i] = isHover(dataBoxContent[i], *_data->_window, windowTranslateY);
+			dataBoxContentHover[i] = isHover(dataBoxContent[i], *_data->_window);
 		}
     }
 }
@@ -338,7 +318,7 @@ void HomePage::update()
 	//Click
 	if (favListClick)
 	{
-
+		_data->_states->addState(new FavList(_data));
 		favListClick = 0;
 	}
 	if (historyClick)
@@ -349,12 +329,12 @@ void HomePage::update()
 	}
 	if (addWordClick)
 	{
-
+		
 		addWordClick = 0;
 	}
 	if (resetClick)
 	{
-
+		_data->_states->addState(new Confirm(_data, L"Are you sure to reset the app?"));
 		resetClick = 0;
 	}
 	if (quizClick)
@@ -364,11 +344,12 @@ void HomePage::update()
 	}
 	if (searchIconClick)
 	{
-		if (search(getDataset(dataSet.getString(), _data), getSearchBoxText) != nullptr)
+		std::wstring dtset = dataSet.getString();
+		std::wstring line = getSearchBoxText + L"(" + dtset + L")";
+		if (!existWord(line , L"Resource\\RemoveWord.txt") && search(getDataset(dataSet.getString(), _data), getSearchBoxText) != nullptr)
 		{
-			std::wstring dtset = dataSet.getString();
-			historyFile << getSearchBoxText << "(" << dtset << ")" << std::endl;
-			_data->_states->addState(new WordDefinition(_data, search(getDataset(dataSet.getString(), _data), getSearchBoxText)));
+			historyFile << line << std::endl;
+			_data->_states->addState(new WordDefinition(_data, search(getDataset(dataSet.getString(), _data), getSearchBoxText), dataSet.getString()));
 			getSearchBoxText.clear();
 		}
 		else

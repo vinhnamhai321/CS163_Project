@@ -9,7 +9,6 @@ private:
 	sf::Time time;
 	sf::Clock clock;
 	sf::View view;
-	int windowTranslateY;
 	std::wfstream historyFile;
 
 	sf::RectangleShape navbar;
