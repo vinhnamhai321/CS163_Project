@@ -6,6 +6,7 @@
 #include"Confirm.h"
 #include<locale>
 #include<codecvt>
+
 HomePage::HomePage(data* data) : _data(data), dataBoxHidden(1), blink(1)
 {}
 HomePage::~HomePage()
@@ -348,6 +349,7 @@ void HomePage::update()
 		std::wstring line = getSearchBoxText + L"(" + dtset + L")";
 		if (!existWord(line , L"Resource\\RemoveWord.txt") && search(getDataset(dataSet.getString(), _data), getSearchBoxText) != nullptr)
 		{
+			
 			historyFile << line << std::endl;
 			_data->_states->addState(new WordDefinition(_data, search(getDataset(dataSet.getString(), _data), getSearchBoxText), dataSet.getString()));
 			getSearchBoxText.clear();

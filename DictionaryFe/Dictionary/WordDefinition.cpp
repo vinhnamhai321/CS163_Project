@@ -19,7 +19,7 @@ void WordDefinition::init()
 	backArr.setScale(sf::Vector2f(0.2, 0.2));
 
 	//Set word
-	word = createText(_keyword->keyWord,200, 100, 60);
+	word = createText(_keyword->keyWord,50, 100, 60);
 	word.setFont(_data->_assets->getFont(HELVETICA_BOLD));
 	word.setFillColor(sf::Color(10, 123, 233, 255));
 
@@ -27,9 +27,9 @@ void WordDefinition::init()
 	for (int i = 0;i < _keyword->definition.size(); i++)
 	{
 		sf::Text def;
-		def.setFont(_data->_assets->getFont(CHIVOMONO_REGULAR));
+		def.setFont(_data->_assets->getFont(LIGHT));
 		def.setString(_keyword->definition[i]);
-		def.setPosition(sf::Vector2f(200, i*50 + 200));
+		def.setPosition(sf::Vector2f(50, i*50 + 200));
 		def.setFillColor(sf::Color::Black);
 		def.setCharacterSize(20);
 		definition.push_back(def);

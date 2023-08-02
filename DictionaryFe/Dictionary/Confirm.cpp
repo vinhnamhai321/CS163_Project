@@ -1,5 +1,6 @@
 #include "Confirm.h"
 #include"HandmadeFunc.h"
+#include"HomePage.h"
 #include<locale>
 #include<codecvt>
 Confirm::Confirm(data* data, std::wstring status, std::wstring line) : _data(data), _status(status), _line(line)
@@ -84,6 +85,7 @@ void Confirm::update()
 	//Click;
 	if (yesButtonClick)
 	{
+		_data->_states->removeState();
 		if (_status == L"Are you sure to remove this word?")
 		{
 			removeWordFile << _line << std::endl;
@@ -99,9 +101,10 @@ void Confirm::update()
 			std::ofstream favListFile("Resource\\FavList.txt");
 			favListFile.clear();
 			favListFile.close();
+			removeWordFile.clear();
+			_data->_states->addState(new HomePage(_data), 1);
 		}
 		removeWordFile.close();
-		_data->_states->removeState();
 		yesButtonClick = 0;
 	}
 	if (noButtonClick)
