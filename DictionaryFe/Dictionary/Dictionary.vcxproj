@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="assetManager.cpp" />
     <ClCompile Include="Confirm.cpp" />
+    <ClCompile Include="CreateWord.cpp" />
     <ClCompile Include="FavList.cpp" />
     <ClCompile Include="HandmadeFunc.cpp" />
     <ClCompile Include="History.cpp" />
@@ -35,6 +36,7 @@
   <ItemGroup>
     <ClInclude Include="assetManager.h" />
     <ClInclude Include="Confirm.h" />
+    <ClInclude Include="CreateWord.h" />
     <ClInclude Include="FavList.h" />
     <ClInclude Include="HandmadeFunc.h" />
     <ClInclude Include="History.h" />

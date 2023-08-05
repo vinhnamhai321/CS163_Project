@@ -4,6 +4,7 @@
 #include"WordDefinition.h"
 #include"FavList.h"
 #include"Confirm.h"
+#include"CreateWord.h"
 #include<locale>
 #include<codecvt>
 
@@ -185,7 +186,7 @@ void HomePage::processInput()
 			}
 			break;
 		case sf::Event::TextEntered:
-		{
+		
 			if (searchBoxFocus && !sf::Keyboard::isKeyPressed(sf::Keyboard::Enter))
 			{
 				if (event.key.code == 8)
@@ -229,11 +230,11 @@ void HomePage::processInput()
 				blink = 1;
 			}
 			break;
-		}
+		
 		case sf::Event::KeyPressed:
 			if (searchBoxFocus)
 			{
-				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && curPosX > 410)
+				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 				{
 					curPosX -= 15;
 				}
@@ -330,7 +331,7 @@ void HomePage::update()
 	}
 	if (addWordClick)
 	{
-		
+		_data->_states->addState(new CreateWord(_data, L"Add new word"));
 		addWordClick = 0;
 	}
 	if (resetClick)

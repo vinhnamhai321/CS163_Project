@@ -47,7 +47,7 @@ void System::run()
 		{
 			if (!_data->evDone)
 			{
-				_data->ev.loadDataSet(EV);
+				//_data->ev.loadDataSet(EV);
 				_data->evDone = 1;
 			}
 		}
@@ -55,7 +55,7 @@ void System::run()
 		{
 			if (!_data->veDone)
 			{
-				_data->ve.loadDataSet(VE);
+				//_data->ve.loadDataSet(VE);
 				_data->veDone = 1;
 			}
 		}

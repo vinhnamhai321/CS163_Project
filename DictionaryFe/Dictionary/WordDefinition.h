@@ -10,10 +10,13 @@ private:
 	WordDef* _keyword;
 	std::wstring _dataset;
 	sf::View view;
+	int windowTranslateY;
+	int windowTranslateX;
 
 	sf::Sprite backArr;
 	bool backArrHover;
 	bool backArrClick;
+	sf::RectangleShape bar;
 
 	sf::Text word;
 	std::vector<sf::Text> definition;

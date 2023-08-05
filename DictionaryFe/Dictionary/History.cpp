@@ -91,7 +91,7 @@ void History::processInput()
 				translateY = -30;
 				windowTranslateY -= 30;
 			}
-			if (event.mouseWheelScroll.delta < 0 && windowTranslateY < historyList.size() * 100) {
+			if (event.mouseWheelScroll.delta < 0 && windowTranslateY < historyList.size() * 100 - 50) {
 				view.move(sf::Vector2f(0, 30));
 				translateY = 30;
 				windowTranslateY += 30;
