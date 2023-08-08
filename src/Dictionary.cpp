@@ -99,6 +99,25 @@ void Dictionary::addWord(std::wstring keyWord, std::vector<std::wstring> wordDef
     if (tree == nullptr)
         return;
     tree->buildTrie(keyWord, wordDef);
+
+    // Save to file
+    std::string TreeName = "";
+    switch (this->currentTree) {
+    case 1:
+        TreeName = "EV";
+        break;
+    case 2:
+        TreeName = "EE";
+        break;
+    case 3:
+        TreeName = "VE";
+        break;
+    }
+
+    std::wofstream file("./data-set/" + TreeName + "_addWord.txt", std::ios::app);
+    file << '@' << keyWord << '\n';
+    for (const std::wstring &def : wordDef)
+        file << def << '\n';
 }
 
 // Provide four random definition and guess correct keyword
