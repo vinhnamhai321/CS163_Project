@@ -4,6 +4,8 @@
 #include <unordered_set>
 
 extern Trie ev, ee, ve;
+extern Trie ev_addWord, ee_addWord, ve_addWord;
+extern Trie ev_edited, ee_edited, ve_edited;
 void Trie::buildTrie(std::wstring keyWord, std::vector<std::wstring> wordDef) {
     Node *cur = root;
     auto len = keyWord.length();
@@ -326,13 +328,47 @@ int getIndex(wchar_t letter) {
     return -1;
 }
 
-Trie *getTree(int data) {
-    if (data == 1)
-        return &ee;
-    if (data == 2)
-        return &ev;
-    if (data == 3)
-        return &ve;
+/// @brief Return pointer of Trie
+/// @param data - 0: EE, 1: EV, 2: VE
+/// @param type - 0: Trie, 1: Trie addWord, 2: Trie edited
+/// @return Pointer of Trie
+Trie *getTree(int data, int type) {
+    if (data == 1) {
+        switch (type) {
+        case 1:
+            return &ee_addWord;
+            break;
+        case 2:
+            return &ee_edited;
+            break;
+        default:
+            return &ee;
+        }
+    }
+    if (data == 2) {
+        switch (type) {
+        case 1:
+            return &ev_addWord;
+            break;
+        case 2:
+            return &ev_edited;
+            break;
+        default:
+            return &ev;
+        }
+    }
+    if (data == 3) {
+        switch (type) {
+        case 1:
+            return &ve_addWord;
+            break;
+        case 2:
+            return &ve_edited;
+            break;
+        default:
+            return &ve;
+        }
+    }
     return nullptr;
 }
 

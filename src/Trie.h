@@ -57,6 +57,6 @@ WordDef *searchKeyWord(Trie &tree, std::wstring keyWord);
 
 WordDef *search(int data, std::wstring keyWord);
 
-Trie *getTree(int data);
+Trie *getTree(int data, int type = 0);
 
 void deleteTree();

@@ -14,6 +14,9 @@ int getInput() {
 }
 
 Trie ev, ee, ve;
+Trie ev_addWord, ee_addWord, ve_addWord;
+Trie ev_edited, ee_edited, ve_edited;
+
 void Dictionary::run() {
     build();
     process();
@@ -95,9 +98,7 @@ void Dictionary::addWord(std::wstring keyWord, std::vector<std::wstring> wordDef
     for (wchar_t &c : keyWord)
         c = towlower(c);
 
-    Trie *tree = getTree(this->currentTree);
-    if (tree == nullptr)
-        return;
+    Trie *tree = getTree(this->currentTree, 1);
     tree->buildTrie(keyWord, wordDef);
 
     // Save to file
