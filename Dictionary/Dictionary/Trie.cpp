@@ -452,3 +452,49 @@ void deleteMap()
     ve.myMap.clearMap();
     emoji.myMap.clearMap();
 }
+
+std::vector<std::wstring> suggestWord(int data, std::wstring input)
+{
+    if (data == 1)
+        return crawl(ee, input);
+    if (data == 2)
+        return crawl(ev, input);
+    if (data == 3)
+        return crawl(ve, input);
+    if (data == 4)
+        return crawl(emoji, input);
+}
+
+std::vector<std::wstring> crawl(Trie& tree, std::wstring input)
+{
+    std::vector<std::wstring> suggestWord;
+    Node* cur = tree.root;
+    size_t len = input.length();
+    for (int i = 0; i < len; ++i)
+    {
+        wchar_t letter = input[i];
+        int index = getIndex(letter);
+        cur = cur->character[index];
+        if (!cur)
+            return suggestWord;
+    }
+    for (int i = 0; i < 155; ++i)
+    {
+        crawl(cur->character[i],suggestWord);
+    }
+
+    return suggestWord;
+}
+
+void crawl(Node*& cur, std::vector<std::wstring> word)
+{
+    if (cur)
+        return;
+    if (cur->isWord)
+    {
+        std::wstring s;
+        word.push_back(cur->word->keyWord);
+    }
+    for (int i = 0; i < 106; ++i)
+        crawl(cur->character[i], word);
+}
