@@ -13,10 +13,10 @@ void Dictionary::build()
 {
 	(void)_setmode(_fileno(stdin), _O_U16TEXT);
 	(void)_setmode(_fileno(stdout), _O_U8TEXT);
-	//ee.loadDataSet(EE);
+	ee.loadDataSet(EE);
 	//ev.loadDataSet(EV);
 	//ve.loadDataSet(VE);
-	emoji.loadDataSet(EMOJI);
+	//emoji.loadDataSet(EMOJI);
 }
 
 void Dictionary::process()

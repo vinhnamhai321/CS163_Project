@@ -53,7 +53,7 @@ void crawl(std::wofstream& fout, Node*& cur);
 
 std::vector<std::wstring> crawl(Trie& tree, std::wstring input);	/*return vector include suggested words
 																	for input string*/
-void crawl(Node*& cur, std::vector<std::wstring> word);				//crawl from the start point - find suggested word
+void crawl(Node*& cur, std::vector<std::wstring>& word);				//crawl from the start point - find suggested word
 
 WordDef* searchDefinition(Trie& tree, std::wstring def);
 

@@ -1,6 +1,2 @@
 ﻿  Dictionary.cpp
-  HashMap.cpp
-  Trie.cpp
-  Generating Code...
-E:\CS163_Project\Dictionary\Dictionary\Trie.cpp(466): warning C4715: 'suggestWord': not all control paths return a value
   Dictionary.vcxproj -> E:\CS163_Project\Dictionary\x64\Debug\Dictionary.exe
