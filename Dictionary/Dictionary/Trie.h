@@ -22,7 +22,7 @@ struct WordDef
 
 struct Node
 {
-	Node* character[106]{};
+	Node* character[155]{};
 	bool isWord{};
 	WordDef* word{};
 };
@@ -45,8 +45,14 @@ int getIndex(wchar_t letter);				//return index for trie
 
 WordDef* searchKeyWord(Trie& tree, std::wstring keyWord);
 
-WordDef* search(int data, std::wstring keyWord);
+WordDef* search(int data, bool option, std::wstring keyWord);
+
+void crawl(std::wofstream& fout, Node*& cur);
+
+WordDef* searchDefinition(Trie& tree, std::wstring def);
+
+void clearDataset();
 
 void deleteTree();
 
-void crawl(std::wofstream& fout, Node*& cur);
+void deleteMap();

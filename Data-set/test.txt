@@ -1,10 +1,11 @@
-@huyện đoàn
+@'em
 //
-- District Youth Union(communist)
-@huyện đội
+- An obsolete or colloquial contraction of the old form hem  them.
+@'gainst
 //
-- District armed forces(communist)
-@huyện đường
+*preposition
+- A contraction of Against.
+@'mongst
 //
-- (từ cũ; nghĩa cũ) District chief's yamen
-=Bị gọi đến huyện đường hầu kiện+To be summoned to the district chief's yamen in connection with a trial
+*preposition
+- See Amongst.

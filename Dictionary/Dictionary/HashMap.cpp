@@ -3,9 +3,11 @@
 
 long long setIndex(std::wstring s) {
     size_t len = s.length();
-    long long prev = (long long)getIndex(s[0]);
-    long long ans = prev;
-    for (int i = 1; i < len; ++i) ans = (prev * 26 + (long long)getIndex(s[i]) % base);
+    long long ans = (long long)(s[0]) % base;
+    for (int i = 1; i < len; ++i)
+    {
+        ans = ((ans * 26) % base + (long long)(s[i]) % base) % base;
+    }
     return ans;
 }
 
@@ -33,4 +35,17 @@ std::wstring HashMap::search(std::wstring s)
             return cur->keyWord;
     }
     return L" ";
+}
+
+void HashMap::clearMap()
+{
+    for (int i = 0; i < 1000001; ++i)
+    {
+        while (myTable[i])
+        {
+            Table* tmp = myTable[i]->pNext;
+            delete myTable[i];
+            myTable[i] = tmp;
+        }
+    }
 }

@@ -1,7 +1,8 @@
 #include "Dictionary.h"
 #include "Trie.h"
+#include <unordered_set>
 
-Trie ev, ee, ve;
+Trie ev, ee, ve, emoji;
 void Dictionary::run()
 {
 	build();
@@ -12,24 +13,26 @@ void Dictionary::build()
 {
 	(void)_setmode(_fileno(stdin), _O_U16TEXT);
 	(void)_setmode(_fileno(stdout), _O_U8TEXT);
-	ee.loadDataSet(EE);
-	ev.loadDataSet(EV);
-	ve.loadDataSet(VE);
+	//ee.loadDataSet(EE);
+	//ev.loadDataSet(EV);
+	//ve.loadDataSet(VE);
+	emoji.loadDataSet(EMOJI);
 }
 
 void Dictionary::process()
 {
-	while(true)
+	while (true)
 	{
 		std::wcout << "1.Eng-Eng\n";
 		std::wcout << "2.Eng-Vie\n";
 		std::wcout << "3.Vie-Eng\n";
-		std::wcout << "4.Exit\n";
+		std::wcout << "4.Emoji\n";
+		std::wcout << "5.Exit\n";
 		std::wcout << "Select data-set:";
 		int data; std::wcin >> data;
-		if (data == 4)
+		if (data == 5)
 		{
-			deleteTree();
+			clearDataset();
 			break;
 		}
 		bool back = 0;
@@ -48,7 +51,7 @@ void Dictionary::process()
 				std::wcin.ignore();
 				std::wcout << "Input:";
 				getline(std::wcin, inputString);
-				WordDef* find = search(data, inputString);
+				WordDef* find = search(data, 1, inputString);
 				if (!find)
 					std::wcout << "Can not find this word in dictionary\n";
 				else
@@ -60,11 +63,13 @@ void Dictionary::process()
 				}
 				break;
 			}
-			/*case 2:
+			case 2:
 			{
 				std::wstring inputString;
+				std::wcin.ignore();
+				std::wcout << "Input:";
 				getline(std::wcin, inputString);
-				WordDef* find = searchDefinition(, inputString);
+				WordDef* find = search(data, 0, inputString);
 				if (!find)
 					std::wcout << "Can not find this word in dictionary\n";
 				else
@@ -74,7 +79,7 @@ void Dictionary::process()
 						std::wcout << item << std::endl;
 				}
 				break;
-			}*/
+			}
 			case 3:
 			{
 				back = 1;
