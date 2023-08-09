@@ -21,6 +21,7 @@ bool isFocus(focus obj, sf::Window& data, int translateY = 0, int translateX = 0
 void removeWord(std::wstring line, std::wstring path);
 Trie getDataset(std::wstring dataset, data* _data);
 bool existWord(std::wstring line, std::wstring path);
+std::wstring randomWord(data* _data, int id = -1);
 
 
 

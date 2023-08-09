@@ -27,6 +27,7 @@
     <ClCompile Include="History.cpp" />
     <ClCompile Include="HomePage.cpp" />
     <ClCompile Include="Loading.cpp" />
+    <ClCompile Include="Quiz.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="stateMachine.cpp" />
     <ClCompile Include="system.cpp" />
@@ -42,6 +43,7 @@
     <ClInclude Include="History.h" />
     <ClInclude Include="HomePage.h" />
     <ClInclude Include="Loading.h" />
+    <ClInclude Include="Quiz.h" />
     <ClInclude Include="state.h" />
     <ClInclude Include="stateMachine.h" />
     <ClInclude Include="system.h" />

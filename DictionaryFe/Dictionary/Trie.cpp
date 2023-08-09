@@ -22,7 +22,7 @@ void Trie::buildTrie(std::wstring keyWord, std::vector<std::wstring> wordDef)
 	}
 }
 
-void Trie::loadDataSet(std::string path)
+void Trie::loadDataSet(std::string path, std::vector<WordDef> &word)
 {	
 	std::wifstream fin(path);
     std::locale loc(std::locale(), new std::codecvt_utf8<wchar_t>);
@@ -34,9 +34,12 @@ void Trie::loadDataSet(std::string path)
 		std::vector<std::wstring> wordDef;
 		std::wstring keyWord = get.substr(1, get.length() - 1);	//remove '@' character from key word
 		getline(fin, get);
-		for (; !fin.eof() && get[0] != '@'; getline(fin, get))	//set condition whenever meet new key word
-			wordDef.push_back(get);		//push all definition of current key word
+        for (; !fin.eof() && get[0] != '@'; getline(fin, get))	//set condition whenever meet new key word
+            wordDef.push_back(get);		//push all definition of current key word
 		buildTrie(keyWord, wordDef);	//create new key word in trie
+        WordDef w(keyWord, wordDef);
+        word.push_back(w);
+
 	}
 }
 

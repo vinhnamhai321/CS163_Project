@@ -4,6 +4,7 @@
 #include<locale>
 #include<codecvt>
 #include<iostream>
+#include<ctime>
 sf::RectangleShape createRectangleShape(float width, float height, float x, float y)
 {
 	sf::RectangleShape shape;
@@ -77,4 +78,52 @@ bool existWord(std::wstring line, std::wstring path)
 	}
 	fin.close();
 	return false;
+}
+std::wstring randomWord(data* _data, int id)
+{
+	srand(time(NULL));
+	if (id == -1)
+	{
+		id = rand() % 3;
+	}
+	std::wstring data;
+	std::wstring word;
+	std::wstring line;
+	if (id == 0)
+	{
+		data = L"Eng-Eng";
+		int idx = rand() % _data->eeKeyword.size();
+		word = _data->eeKeyword[idx].keyWord;
+		while (existWord(word + L"(" + data + L")", L"Resource\\RemoveWord.txt"))
+		{
+			idx = rand() % _data->eeKeyword.size();
+			word = _data->eeKeyword[idx].keyWord;
+		}
+		line = word + L"(" + data + L")";
+	}
+	if (id == 1)
+	{
+		data = L"Eng-Vi";
+		int idx = rand() % _data->evKeyword.size();
+		word = _data->evKeyword[idx].keyWord;
+		while (existWord(word + L"(" + data + L")", L"Resource\\RemoveWord.txt"))
+		{
+			idx = rand() % _data->eeKeyword.size();
+			word = _data->evKeyword[idx].keyWord;
+		}
+		line = word + L"(" + data + L")";
+	}
+	if (id == 2)
+	{
+		data = L"Vi-Eng";
+		int idx = rand() % _data->veKeyword.size();
+		word = _data->veKeyword[idx].keyWord;
+		while (existWord(word + L"(" + data + L")", L"Resource\\RemoveWord.txt"))
+		{
+			idx = rand() % _data->eeKeyword.size();
+			word = _data->veKeyword[idx].keyWord;
+		}
+		line = word + L"(" + data + L")";
+	}
+	return line;
 }

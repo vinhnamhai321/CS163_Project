@@ -9,7 +9,7 @@ Confirm::~Confirm()
 {}
 void Confirm::init()
 {
-	removeWordFile.open(L"Resource\\removeWord.txt", std::ios::app);
+	removeWordFile.open(L"Resource\\RemoveWord.txt", std::ios::app);
 	std::locale loc(std::locale(), new std::codecvt_utf8<wchar_t>);
 	removeWordFile.imbue(loc);
 	//set view
@@ -94,14 +94,17 @@ void Confirm::update()
 		}
 		if (_status == L"Are you sure to reset the app?")
 		{
-			removeWordFile.clear();
+			
 			std::ofstream historyFile("Resource\\History.txt");
 			historyFile.clear();
 			historyFile.close();
 			std::ofstream favListFile("Resource\\FavList.txt");
 			favListFile.clear();
 			favListFile.close();
-			removeWordFile.clear();
+			std::ofstream removeFile("Resource\\RemoveWord.txt");
+			removeFile.clear();
+			removeFile.close();
+			
 			_data->_states->addState(new HomePage(_data), 1);
 		}
 		removeWordFile.close();

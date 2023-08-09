@@ -24,11 +24,11 @@ public:
 	//function
 	void deleteTrie(Node*& root);
 	void buildTrie(std::wstring keyWord, std::vector<std::wstring> wordDef);
-	void loadDataSet(std::string path);		//load EV and EE file
+	void loadDataSet(std::string path, std::vector<WordDef> &word);		
 	Node* root = new Node;
 };
 
-int getIndex(wchar_t letter);				//return index for trie
+int getIndex(wchar_t letter);				
 
 WordDef* search(Trie tree, std::wstring keyWord);
 

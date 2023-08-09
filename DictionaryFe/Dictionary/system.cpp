@@ -1,6 +1,7 @@
 #include"system.h"
 #include"Loading.h"
 #include<omp.h>
+#include<iostream>
 System::System() : _data(new data)
 {
 	_data->eeDone = 0;
@@ -39,7 +40,7 @@ void System::run()
 		{
 			if (!_data->eeDone)
 			{
-				_data->ee.loadDataSet(EE);
+				_data->ee.loadDataSet(EE, _data->eeKeyword);
 				_data->eeDone = 1;
 			}
 		}
@@ -47,7 +48,7 @@ void System::run()
 		{
 			if (!_data->evDone)
 			{
-				//_data->ev.loadDataSet(EV);
+				_data->ev.loadDataSet(EV, _data->evKeyword);
 				_data->evDone = 1;
 			}
 		}
@@ -55,7 +56,7 @@ void System::run()
 		{
 			if (!_data->veDone)
 			{
-				//_data->ve.loadDataSet(VE);
+				_data->ve.loadDataSet(VE, _data->veKeyword);
 				_data->veDone = 1;
 			}
 		}

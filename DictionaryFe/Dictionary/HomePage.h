@@ -60,6 +60,11 @@ private:
 	bool dataBoxHidden;
 	std::wstring getDataSet;
 
+	sf::Text random;
+	bool randomHover;
+	bool randomClick;
+	
+
 	sf::Text status; 
 	bool statusOn;
 public:

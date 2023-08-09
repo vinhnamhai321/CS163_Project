@@ -1,5 +1,5 @@
-﻿  CreateWord.cpp
-C:\Users\DELL\Documents\DictionaryFe\Dictionary\CreateWord.cpp(13,91): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+﻿  Quiz.cpp
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\Quiz.cpp(16,91): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int
@@ -8,7 +8,7 @@ C:\Users\DELL\Documents\DictionaryFe\Dictionary\CreateWord.cpp(13,91): warning C
           [
               T=float
           ]
-C:\Users\DELL\Documents\DictionaryFe\Dictionary\CreateWord.cpp(13,58): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\Quiz.cpp(16,58): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int
@@ -17,152 +17,132 @@ C:\Users\DELL\Documents\DictionaryFe\Dictionary\CreateWord.cpp(13,58): warning C
           [
               T=float
           ]
-C:\Users\DELL\Documents\DictionaryFe\Dictionary\CreateWord.cpp(20,40): warning C4305: 'argument': truncation from 'double' to 'T'
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\Quiz.cpp(21,40): warning C4305: 'argument': truncation from 'double' to 'T'
           with
           [
               T=float
           ]
-C:\Users\DELL\Documents\DictionaryFe\Dictionary\CreateWord.cpp(28,54): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\Quiz.cpp(31,58): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\Quiz.cpp(35,54): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\Quiz.cpp(39,46): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\Quiz.cpp(48,35): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
           with
           [
               T=unsigned int
           ]
-C:\Users\DELL\Documents\DictionaryFe\Dictionary\CreateWord.cpp(120,40): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\Quiz.cpp(47,31): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
           with
           [
               T=unsigned int
           ]
-C:\Users\DELL\Documents\DictionaryFe\Dictionary\CreateWord.cpp(119,35): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\Quiz.cpp(54,41): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
           with
           [
               T=unsigned int
           ]
-C:\Users\DELL\Documents\DictionaryFe\Dictionary\CreateWord.cpp(126,58): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\Quiz.cpp(53,35): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
           with
           [
               T=unsigned int
           ]
-C:\Users\DELL\Documents\DictionaryFe\Dictionary\CreateWord.cpp(125,40): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\Quiz.cpp(108,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\Quiz.cpp(125,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\Quiz.cpp(136,107): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int
-          ]
-C:\Users\DELL\Documents\DictionaryFe\Dictionary\CreateWord.cpp(154,29): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\DictionaryFe\Dictionary\CreateWord.cpp(155,33): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\DictionaryFe\Dictionary\CreateWord.cpp(156,31): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\DictionaryFe\Dictionary\CreateWord.cpp(167,14): warning C4018: '<': signed/unsigned mismatch
-C:\Users\DELL\Documents\DictionaryFe\Dictionary\CreateWord.cpp(188,53): warning C4244: '=': conversion from 'T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\DictionaryFe\Dictionary\CreateWord.cpp(193,15): warning C4018: '<': signed/unsigned mismatch
-C:\Users\DELL\Documents\DictionaryFe\Dictionary\CreateWord.cpp(211,15): warning C4018: '<': signed/unsigned mismatch
-C:\Users\DELL\Documents\DictionaryFe\Dictionary\CreateWord.cpp(232,52): warning C4244: '=': conversion from 'T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\DictionaryFe\Dictionary\CreateWord.cpp(237,16): warning C4018: '<': signed/unsigned mismatch
-C:\Users\DELL\Documents\DictionaryFe\Dictionary\CreateWord.cpp(258,109): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\DictionaryFe\Dictionary\CreateWord.cpp(258,63): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=int
           ]
           and
           [
               T=float
           ]
-C:\Users\DELL\Documents\DictionaryFe\Dictionary\CreateWord.cpp(289,26): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\Quiz.cpp(136,68): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
+          [
+              T=unsigned int
+          ]
+          and
           [
               T=float
           ]
-C:\Users\DELL\Documents\DictionaryFe\Dictionary\CreateWord.cpp(290,30): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\Quiz.cpp(152,73): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
+          [
+              T=unsigned int
+          ]
+          and
           [
               T=float
           ]
-C:\Users\DELL\Documents\DictionaryFe\Dictionary\CreateWord.cpp(291,28): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\Quiz.cpp(153,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\Quiz.cpp(176,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\Quiz.cpp(187,107): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
+          [
+              T=unsigned int
+          ]
+          and
           [
               T=float
           ]
-C:\Users\DELL\Documents\DictionaryFe\Dictionary\CreateWord.cpp(334,49): warning C4244: '=': conversion from 'const T' to 'int', possible loss of data
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\Quiz.cpp(187,68): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
+          [
+              T=unsigned int
+          ]
+          and
           [
               T=float
           ]
-C:\Users\DELL\Documents\DictionaryFe\Dictionary\CreateWord.cpp(339,49): warning C4244: '=': conversion from 'const T' to 'int', possible loss of data
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\Quiz.cpp(203,73): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
+          [
+              T=unsigned int
+          ]
+          and
           [
               T=float
           ]
-C:\Users\DELL\Documents\DictionaryFe\Dictionary\CreateWord.cpp(344,12): warning C4018: '<': signed/unsigned mismatch
-C:\Users\DELL\Documents\DictionaryFe\Dictionary\CreateWord.cpp(351,49): warning C4244: '=': conversion from 'const T' to 'int', possible loss of data
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\Quiz.cpp(204,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\Quiz.cpp(227,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\Quiz.cpp(238,107): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
+          [
+              T=unsigned int
+          ]
+          and
           [
               T=float
           ]
-C:\Users\DELL\Documents\DictionaryFe\Dictionary\CreateWord.cpp(362,48): warning C4244: '=': conversion from 'const T' to 'int', possible loss of data
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\Quiz.cpp(238,68): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
+          [
+              T=unsigned int
+          ]
+          and
           [
               T=float
           ]
-C:\Users\DELL\Documents\DictionaryFe\Dictionary\CreateWord.cpp(367,48): warning C4244: '=': conversion from 'const T' to 'int', possible loss of data
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\Quiz.cpp(254,73): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
+          [
+              T=unsigned int
+          ]
+          and
           [
               T=float
           ]
-C:\Users\DELL\Documents\DictionaryFe\Dictionary\CreateWord.cpp(372,13): warning C4018: '<': signed/unsigned mismatch
-C:\Users\DELL\Documents\DictionaryFe\Dictionary\CreateWord.cpp(379,48): warning C4244: '=': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\DictionaryFe\Dictionary\CreateWord.cpp(416,16): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\DictionaryFe\Dictionary\CreateWord.cpp(417,35): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\DictionaryFe\Dictionary\CreateWord.cpp(423,17): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\DictionaryFe\Dictionary\CreateWord.cpp(424,35): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\Quiz.cpp(255,24): warning C4018: '<': signed/unsigned mismatch
 C:\Users\DELL\Documents\DictionaryFe\Dictionary\HandmadeFunc.h(12,102): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\DELL\Documents\DictionaryFe\Dictionary\CreateWord.cpp(295,86): message : see reference to function template instantiation 'bool isHover<sf::Sprite>(hover,sf::Window &,int,int)' being compiled
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\Quiz.cpp(79,50): message : see reference to function template instantiation 'bool isHover<sf::Sprite>(hover,sf::Window &,int,int)' being compiled
           with
           [
               hover=sf::Sprite

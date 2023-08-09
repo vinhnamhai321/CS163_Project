@@ -5,6 +5,7 @@
 #include"FavList.h"
 #include"Confirm.h"
 #include"CreateWord.h"
+#include"Quiz.h"
 #include<locale>
 #include<codecvt>
 
@@ -150,6 +151,13 @@ void HomePage::init()
 		searchBox.getPosition().y + 50, 20);
 	status.setFont(_data->_assets->getFont(CHIVOMONO_LIGHT));
 	status.setFillColor(sf::Color::Red);
+
+	//Set random
+	random = createText(L"Random word", _data->_window->getSize().x / 2, _data->_window->getSize().y / 2 + 60, 40);
+	random.setFont(_data->_assets->getFont(HELVETICA_BOLD));
+	random.setFillColor(sf::Color(10, 123, 233, 255));
+
+	
 }
 void HomePage::processInput()
 {
@@ -183,6 +191,8 @@ void HomePage::processInput()
 				resetClick = (resetHover ? 1 : 0);
 				quizClick = (quizHover ? 1 : 0);
 				searchIconClick = (searchIconHover ? 1 : 0);
+				randomClick = (randomHover ? 1 : 0);
+				
 			}
 			break;
 		case sf::Event::TextEntered:
@@ -258,6 +268,8 @@ void HomePage::processInput()
 		quizHover = isHover(quiz, *_data->_window);
 		searchIconHover = isHover(searchIconBox, *_data->_window);
 		downArrHover = isHover(downArr, *_data->_window);
+		randomHover = isHover(random, *_data->_window);
+		
 		for (int i = 0; i < 3; i++)
 		{
 			dataBoxContentHover[i] = isHover(dataBoxContent[i], *_data->_window);
@@ -278,6 +290,8 @@ void HomePage::update()
 	(addWordHover ? addWord.setFillColor(sf::Color(255, 255, 255, 200)) : addWord.setFillColor(sf::Color::White));
 	(resetHover ? reset.setFillColor(sf::Color(255, 255, 255, 200)) : reset.setFillColor(sf::Color::White));
 	(quizHover ? quiz.setFillColor(sf::Color(255, 255, 255, 200)) : quiz.setFillColor(sf::Color::White));
+	(randomHover ? random.setFillColor(sf::Color(10, 123, 233, 200)) : random.setFillColor(sf::Color(10, 123, 233, 255)));
+	
 	(searchIconHover ? searchIconBox.setFillColor(sf::Color(10, 123, 233, 150)) : searchIconBox.setFillColor(sf::Color(10, 123, 233, 255)));
 	(downArrHover ? downArr.setColor(sf::Color(255, 255, 255, 100)) : downArr.setColor(sf::Color::White));
 	for (int i = 0;i < 3; i++)
@@ -341,8 +355,15 @@ void HomePage::update()
 	}
 	if (quizClick)
 	{
-
+		_data->_states->addState(new Quiz(_data));
 		quizClick = 0;
+	}
+	if (randomClick)
+	{
+		std::wstring line = randomWord(_data);
+		getDataSet = line.substr(line.find('(') + 1, line.find(')') - line.find('(') - 1);
+		getSearchBoxText = line.substr(0, line.find('('));
+		randomClick = 0;
 	}
 	if (searchIconClick)
 	{
@@ -376,6 +397,7 @@ void HomePage::draw()
 	_data->_window->draw(searchIcon);
 	_data->_window->draw(dataSet);
 	_data->_window->draw(downArr);
+	_data->_window->draw(random);
 	if (!dataBoxHidden)
 	{
 		_data->_window->draw(dataBox);
