@@ -47,7 +47,13 @@ WordDef* searchKeyWord(Trie& tree, std::wstring keyWord);
 
 WordDef* search(int data, bool option, std::wstring keyWord);
 
+std::vector<std::wstring> suggestWord(int data, std::wstring input);	//get the input data for specific data-set
+
 void crawl(std::wofstream& fout, Node*& cur);
+
+std::vector<std::wstring> crawl(Trie& tree, std::wstring input);	/*return vector include suggested words
+																	for input string*/
+void crawl(Node*& cur, std::vector<std::wstring> word);				//crawl from the start point - find suggested word
 
 WordDef* searchDefinition(Trie& tree, std::wstring def);
 
