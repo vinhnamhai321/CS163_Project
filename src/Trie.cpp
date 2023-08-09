@@ -395,6 +395,12 @@ WordDef *searchKeyWord(Trie &tree, std::wstring keyWord) {
 
 void deleteTree() {
     ee.deleteTrie(ee.root);
+    ee_addWord.deleteTrie(ee_addWord.root);
+    ee_edited.deleteTrie(ee_edited.root);
     ev.deleteTrie(ev.root);
+    ev_addWord.deleteTrie(ev_addWord.root);
+    ev_edited.deleteTrie(ev_edited.root);
     ve.deleteTrie(ve.root);
+    ve_addWord.deleteTrie(ve_addWord.root);
+    ve_edited.deleteTrie(ve_edited.root);
 }

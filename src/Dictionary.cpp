@@ -115,6 +115,7 @@ void Dictionary::addWord(std::wstring keyWord, std::vector<std::wstring> wordDef
         break;
     }
 
+    // Write as append mode to "TreeName_addWord.txt"
     std::wofstream file("./data-set/" + TreeName + "_addWord.txt", std::ios::app);
     file << '@' << keyWord << '\n';
     for (const std::wstring &def : wordDef)
