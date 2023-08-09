@@ -1,4 +1,4 @@
-﻿#include "Dictionary.h"
+#include "Dictionary.h"
 
 int main()
 {
