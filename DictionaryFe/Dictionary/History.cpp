@@ -37,8 +37,11 @@ void History::init()
 	}
 	historyListHover = new bool[historyList.size()];
 	historyListClick = new bool[historyList.size()];
-	memset(historyListHover, 0, sizeof(historyListHover));
-	memset(historyListClick, 0, sizeof(historyListClick));
+	for (int i = 0; i < historyList.size(); i++)
+	{
+		historyListHover[i] = 0;
+		historyListClick[i] = 0;
+	}
 
 	//Set clone
 	clone.setFont(_data->_assets->getFont(CHIVOMONO_REGULAR));
@@ -121,10 +124,9 @@ void History::processInput()
 			{
 				for (int i = 0; i < historyList.size(); i++)
 				{
-					if (isHover(historyList[i], *_data->_window, windowTranslateY))
-					{
-						historyListClick[i] = (historyListHover[i] ? 1 : 0);
-					}
+					
+					historyListClick[i] = (historyListHover[i] ? 1 : 0);
+					
 				}
 			}
 			break;

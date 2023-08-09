@@ -38,8 +38,11 @@ void FavList::init()
 	}
 	favListHover = new bool[favList.size()];
 	favListClick = new bool[favList.size()];
-	memset(favListHover, 0, sizeof(favListHover));
-	memset(favListClick, 0, sizeof(favListClick));
+	for (int i = 0; i < favList.size(); i++)
+	{
+		favListHover[i] = 0;
+		favListClick[i] = 0;
+	}
 
 	//Set clone
 	clone.setFont(_data->_assets->getFont(CHIVOMONO_REGULAR));
@@ -115,10 +118,9 @@ void FavList::processInput()
 			{
 				for (int i = 0; i < favList.size(); i++)
 				{
-					if (isHover(favList[i], *_data->_window, windowTranslateY))
-					{
-						favListClick[i] = (favListHover[i] ? 1 : 0);
-					}
+					
+					favListClick[i] = (favListHover[i] ? 1 : 0);
+					
 				}
 			}
 			break;

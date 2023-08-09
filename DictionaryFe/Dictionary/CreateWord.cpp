@@ -110,6 +110,10 @@ void CreateWord::init()
 
 		if (i < maxdefBox)
 		{
+			if (i != 0)
+			{
+				_def[i].erase(0, 1);
+			}
 			getDef[i] = _def[i];
 		}
 	}

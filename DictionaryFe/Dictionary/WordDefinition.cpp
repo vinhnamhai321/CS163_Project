@@ -4,12 +4,16 @@
 #include"CreateWord.h"
 #include<locale>
 #include<codecvt>
+#include<iostream>
+
+
 WordDefinition::WordDefinition(data* data, WordDef* keyword, std::wstring dataset): _data(data), _keyword(keyword), _dataset(dataset)
 {}
 WordDefinition::~WordDefinition()
 {}
 void WordDefinition::init()
 {
+
 	windowTranslateX = 0;
 	windowTranslateY = 0;
 	//set view
