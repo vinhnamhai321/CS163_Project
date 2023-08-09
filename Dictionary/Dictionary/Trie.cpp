@@ -26,7 +26,6 @@ void Trie::buildTrie(std::wstring keyWord, std::vector<std::wstring> wordDef)
 void Trie::loadDataSet(std::string path)
 {
     std::wifstream fin(path);
-    //std::unordered_set <wchar_t> specialChar;
     if (!fin.is_open())
         std::wcout << "Error to load file\n";
     fin.imbue(std::locale(std::locale::empty(), new std::codecvt_utf8<wchar_t>));	//set input for UTF8 character from file
@@ -486,9 +485,9 @@ std::vector<std::wstring> crawl(Trie& tree, std::wstring input)
     return suggestWord;
 }
 
-void crawl(Node*& cur, std::vector<std::wstring> word)
+void crawl(Node*& cur, std::vector<std::wstring>& word)
 {
-    if (cur)
+    if (!cur)
         return;
     if (cur->isWord)
     {
