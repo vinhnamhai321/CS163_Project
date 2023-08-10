@@ -498,16 +498,81 @@ void crawl(Node*& cur, std::vector<std::wstring>& word)
         crawl(cur->character[i], word);
 }
 
-void edit(Trie& tree, std::wstring keyword, std::wofstream& fout)
-{
-    
+/*Node* edit_word(Trie tree, std::wstring edit){
+    Node* cur = tree.root;
+    size_t len = edit.length();
+    for(int i = 0; i < len; i++)
+    {
+        wchar_t letter = edit[i];
+        int index = getIndex(letter);
+        cur = cur->character[index];
+        if(!cur) 
+            return nullptr;
+    }
+    int choice; std::wcin >> choice;
+    switch(choice)
+    {
+    case 1:
+    {
+        int idx; std::wcin >> idx;
+        std::wcin >> 
+    }
+    case 2:
+    {
+        std::wstring new_def;
+        std::wcin >> new_def;
+        cur->word->definition.push_back(new_def);
+        tree.myMap.push(new_def, edit);
+        break;
+    }
+    case 3:
+    {
+        size_t len = cur->word->definition.size();
+    }
+    }
+    return cur;
 }
+
+void edit_trie(Trie tree, Trie& edit_root, std::wstring edit)
+{
+    Node* cur = edit_root.root;
+    Node* edit_node = edit_word(tree, edit);
+    auto len = edit.length();
+    for (int i = 0; i < len; i++)
+    {
+        wchar_t letter = edit[i];
+        int index = getIndex(letter);
+        if (!cur->character[index])
+            cur->character[index] = new Node;
+        cur = cur->character[index];
+    }
+    if (cur)
+    {
+        cur->isWord = 1;
+        cur->word = new WordDef(edit, edit_node->word->definition);
+    }
+}
+
+void edit_txt(std::wstring path, Node* edit_word)
+{ 
+    std::wofstream fout(path);
+    if (!fout.is_open())
+        std::wcout << "Error to load file\n";
+    fout << "@" << edit_word->word->keyWord << std::endl;
+    size_t len = edit_word->word->definition.size();
+    for(int i = 0; i < len; i++)
+    {
+
+    }
+
+}*/
 
 void remove(Trie& tree, std::wstring keyword)
 {
     Node* cur = tree.root;
     size_t len = keyword.length();
-    for(int i = 0; i < len; i++){
+    for(int i = 0; i < len; i++)
+    {
         wchar_t letter = keyword[i];
         int index = getIndex(letter);
         cur = cur->character[index];

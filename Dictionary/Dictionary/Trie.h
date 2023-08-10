@@ -57,6 +57,8 @@ void crawl(Node*& cur, std::vector<std::wstring>& word);				//crawl from the sta
 
 WordDef* searchDefinition(Trie& tree, std::wstring def);
 
+std::vector<std::wstring> edit(Trie& tree, std::wstring keyword);
+
 void edit(Trie& tree, std::wstring keyword, std::wofstream& fout);
 
 void remove(Trie& tree, std::wstring keyword);
