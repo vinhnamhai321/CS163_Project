@@ -497,3 +497,24 @@ void crawl(Node*& cur, std::vector<std::wstring>& word)
     for (int i = 0; i < 106; ++i)
         crawl(cur->character[i], word);
 }
+
+void edit(Trie& tree, std::wstring keyword, std::wofstream& fout)
+{
+    
+}
+
+void remove(Trie& tree, std::wstring keyword)
+{
+    Node* cur = tree.root;
+    size_t len = keyword.length();
+    for(int i = 0; i < len; i++){
+        wchar_t letter = keyword[i];
+        int index = getIndex(letter);
+        cur = cur->character[index];
+        if(!cur && cur->word->keyWord == keyword){
+            break;
+        }
+    }
+    if(!cur) return;
+    delete cur;
+}
