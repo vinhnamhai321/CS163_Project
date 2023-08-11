@@ -1,6 +1,11 @@
 ﻿#include"HomePage.h"
 #include"HandmadeFunc.h"
 #include"History.h"
+#include"WordDefinition.h"
+#include"FavList.h"
+#include"Confirm.h"
+#include"CreateWord.h"
+#include"Quiz.h"
 #include<locale>
 #include<codecvt>
 
@@ -10,17 +15,6 @@ HomePage::~HomePage()
 {}
 void HomePage::init()
 {
-	_data->_assets->addFont(LIGHT, "Fonts\\Light.ttf");
-	_data->_assets->addFont(HELVETICA_BOLD, "Fonts\\Helvetica-Bold.ttf");
-	_data->_assets->addFont(CHIVOMONO_LIGHT, "Fonts\\ChivoMono-Light.ttf");
-	_data->_assets->addFont(CHIVOMONO_REGULAR, "Fonts\\ChivoMono-Regular.ttf");
-	_data->_assets->addFont(KANIT, "Fonts\\Kanit-Regular.ttf");
-	_data->_assets->addTexture(DICTIONARY_ICON, "Img\\dictionaryIcon.png");
-	_data->_assets->addTexture(SEARCH_ICON, "Img\\searchIcon.png");
-	_data->_assets->addTexture(DOWN_ARR, "Img\\downArr.png");
-	_data->_assets->addTexture(BACK_ARR, "Img\\backArr.png");
-	_data->_assets->addTexture(HISTORY_CLOCK, "Img\\historyClock.png");
-	_data->_assets->addTexture(DELETE_ICON, "Img\\deleteIcon.png");
 	time = sf::Time::Zero;
 
 	historyFile.open(L"Resource\\History.txt", std::ios::app);
@@ -29,7 +23,6 @@ void HomePage::init()
 	//set view
 	view.setSize(sf::Vector2f(1600, 900));
 	view.setCenter(sf::Vector2f(_data->_window->getSize().x / 2, _data->_window->getSize().y / 2));
-	windowTranslateY = 0;
 	//Set navbar
 	navbar = createRectangleShape(_data->_window->getSize().x, 60);
 	navbar.setFillColor(sf::Color(29, 42, 87, 255));
@@ -150,6 +143,21 @@ void HomePage::init()
 		dataBoxContent[i].setFont(_data->_assets->getFont(CHIVOMONO_LIGHT));
 		dataBoxContent[i].setFillColor(sf::Color::Black);
 	}
+	
+	//Set status 
+	statusOn = 0;
+	status = createText(L"Not found!",
+		searchBox.getPosition().x - searchBox.getSize().x / 2 + 10,
+		searchBox.getPosition().y + 50, 20);
+	status.setFont(_data->_assets->getFont(CHIVOMONO_LIGHT));
+	status.setFillColor(sf::Color::Red);
+
+	//Set random
+	random = createText(L"Random word", _data->_window->getSize().x / 2, _data->_window->getSize().y / 2 + 60, 40);
+	random.setFont(_data->_assets->getFont(HELVETICA_BOLD));
+	random.setFillColor(sf::Color(10, 123, 233, 255));
+
+	
 }
 void HomePage::processInput()
 {
@@ -161,31 +169,10 @@ void HomePage::processInput()
 		case sf::Event::Closed:
 			_data->_window->close();
 			break;
-		case sf::Event::MouseWheelScrolled:
-		{
-			int translateY = 0;
-			if (event.mouseWheelScroll.delta > 0 && windowTranslateY > 0) {
-				view.move(sf::Vector2f(0, -30));
-				translateY = -30;
-				windowTranslateY -= 30;
-			}
-			if (event.mouseWheelScroll.delta < 0 && windowTranslateY < 450) {
-				view.move(sf::Vector2f(0, 30));
-				translateY = 30;
-				windowTranslateY += 30;
-			}
-			navbar.move(sf::Vector2f(0, translateY));
-			favList.move(sf::Vector2f(0, translateY));
-			history.move(sf::Vector2f(0, translateY));
-			addWord.move(sf::Vector2f(0, translateY));
-			reset.move(sf::Vector2f(0, translateY));
-			quiz.move(sf::Vector2f(0, translateY));
-		}
-		break;
 		case sf::Event::MouseButtonPressed:
 			if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 			{
-				searchBoxFocus = isFocus(searchBox, *_data->_window, windowTranslateY);
+				searchBoxFocus = isFocus(searchBox, *_data->_window);
 				if (searchBoxFocus)
 				{
 					curPosX = sf::Mouse::getPosition(*_data->_window).x;
@@ -204,10 +191,12 @@ void HomePage::processInput()
 				resetClick = (resetHover ? 1 : 0);
 				quizClick = (quizHover ? 1 : 0);
 				searchIconClick = (searchIconHover ? 1 : 0);
+				randomClick = (randomHover ? 1 : 0);
+				
 			}
 			break;
 		case sf::Event::TextEntered:
-		{
+		
 			if (searchBoxFocus && !sf::Keyboard::isKeyPressed(sf::Keyboard::Enter))
 			{
 				if (event.key.code == 8)
@@ -251,11 +240,11 @@ void HomePage::processInput()
 				blink = 1;
 			}
 			break;
-		}
+		
 		case sf::Event::KeyPressed:
 			if (searchBoxFocus)
 			{
-				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && curPosX > 410)
+				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 				{
 					curPosX -= 15;
 				}
@@ -272,16 +261,18 @@ void HomePage::processInput()
 			break;
 		}
 		
-		favListHover = isHover(favList, *_data->_window, windowTranslateY);
-		historyHover = isHover(history, *_data->_window, windowTranslateY);
-		addWordHover = isHover(addWord, *_data->_window, windowTranslateY);
-		resetHover = isHover(reset, *_data->_window, windowTranslateY);
-		quizHover = isHover(quiz, *_data->_window, windowTranslateY);
-		searchIconHover = isHover(searchIconBox, *_data->_window, windowTranslateY);
-		downArrHover = isHover(downArr, *_data->_window, windowTranslateY);
+		favListHover = isHover(favList, *_data->_window);
+		historyHover = isHover(history, *_data->_window);
+		addWordHover = isHover(addWord, *_data->_window);
+		resetHover = isHover(reset, *_data->_window);
+		quizHover = isHover(quiz, *_data->_window);
+		searchIconHover = isHover(searchIconBox, *_data->_window);
+		downArrHover = isHover(downArr, *_data->_window);
+		randomHover = isHover(random, *_data->_window);
+		
 		for (int i = 0; i < 3; i++)
 		{
-			dataBoxContentHover[i] = isHover(dataBoxContent[i], *_data->_window, windowTranslateY);
+			dataBoxContentHover[i] = isHover(dataBoxContent[i], *_data->_window);
 		}
     }
 }
@@ -299,6 +290,8 @@ void HomePage::update()
 	(addWordHover ? addWord.setFillColor(sf::Color(255, 255, 255, 200)) : addWord.setFillColor(sf::Color::White));
 	(resetHover ? reset.setFillColor(sf::Color(255, 255, 255, 200)) : reset.setFillColor(sf::Color::White));
 	(quizHover ? quiz.setFillColor(sf::Color(255, 255, 255, 200)) : quiz.setFillColor(sf::Color::White));
+	(randomHover ? random.setFillColor(sf::Color(10, 123, 233, 200)) : random.setFillColor(sf::Color(10, 123, 233, 255)));
+	
 	(searchIconHover ? searchIconBox.setFillColor(sf::Color(10, 123, 233, 150)) : searchIconBox.setFillColor(sf::Color(10, 123, 233, 255)));
 	(downArrHover ? downArr.setColor(sf::Color(255, 255, 255, 100)) : downArr.setColor(sf::Color::White));
 	for (int i = 0;i < 3; i++)
@@ -311,7 +304,6 @@ void HomePage::update()
 
 	//Text  
 	dataSet.setString(getDataSet);
-
 	searchBoxText.setString(getSearchBoxText);
 	((blink && searchBoxFocus) ? cursor.setString("|") : cursor.setString(""));
 	
@@ -342,7 +334,7 @@ void HomePage::update()
 	//Click
 	if (favListClick)
 	{
-
+		_data->_states->addState(new FavList(_data));
 		favListClick = 0;
 	}
 	if (historyClick)
@@ -353,23 +345,41 @@ void HomePage::update()
 	}
 	if (addWordClick)
 	{
-
+		_data->_states->addState(new CreateWord(_data, L"Add new word", getDataSet));
 		addWordClick = 0;
 	}
 	if (resetClick)
 	{
-
+		_data->_states->addState(new Confirm(_data, L"Are you sure to reset the app?"));
 		resetClick = 0;
 	}
 	if (quizClick)
 	{
-
+		_data->_states->addState(new Quiz(_data));
 		quizClick = 0;
+	}
+	if (randomClick)
+	{
+		std::wstring line = randomWord(_data);
+		getDataSet = line.substr(line.find('(') + 1, line.find(')') - line.find('(') - 1);
+		getSearchBoxText = line.substr(0, line.find('('));
+		randomClick = 0;
 	}
 	if (searchIconClick)
 	{
-		historyFile << getSearchBoxText << std::endl;
-		getSearchBoxText.clear();
+		std::wstring dtset = dataSet.getString();
+		std::wstring line = getSearchBoxText + L"(" + dtset + L")";
+		if (!existWord(line , L"Resource\\RemoveWord.txt") && search(getDataset(dataSet.getString(), _data), getSearchBoxText) != nullptr)
+		{
+			
+			historyFile << line << std::endl;
+			_data->_states->addState(new WordDefinition(_data, search(getDataset(dataSet.getString(), _data), getSearchBoxText), dataSet.getString()));
+			getSearchBoxText.clear();
+		}
+		else
+		{
+			statusOn = 1;
+		}
 		searchIconClick = 0;
 	}
 }
@@ -387,12 +397,17 @@ void HomePage::draw()
 	_data->_window->draw(searchIcon);
 	_data->_window->draw(dataSet);
 	_data->_window->draw(downArr);
+	_data->_window->draw(random);
 	if (!dataBoxHidden)
 	{
 		_data->_window->draw(dataBox);
 		_data->_window->draw(dataBoxContent[0]);
 		_data->_window->draw(dataBoxContent[1]);
 		_data->_window->draw(dataBoxContent[2]);
+	}
+	if (statusOn)
+	{
+		_data->_window->draw(status);
 	}
 	//navbar
 	_data->_window->draw(navbar);

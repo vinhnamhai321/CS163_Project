@@ -1,12 +1,16 @@
 #pragma once
 #include"assetManager.h"
 #include"stateMachine.h"
-
+#include "Trie.h"
+#include<vector>
 struct data
 {
 	assetManager* _assets;
 	stateMachine* _states;
 	sf::RenderWindow* _window;
+	Trie ee, ev, ve;
+	bool eeDone, evDone, veDone;
+	std::vector<WordDef> eeKeyword, evKeyword, veKeyword;
 	data()
 	{
 		_assets = new assetManager;

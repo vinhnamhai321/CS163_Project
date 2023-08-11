@@ -14,6 +14,8 @@ private:
 	std::vector<sf::Text> historyList;
 	sf::Text clone;
 	int cloneIdx;
+	bool *historyListHover;
+	bool *historyListClick;
 	
 	sf::Sprite backArr;
 	bool backArrHover;
@@ -24,8 +26,6 @@ private:
 	sf::Sprite historyClock;
 
 	sf::Sprite deleteIcon;
-
-	
 
 public:
 	History(data* data);

@@ -2,24 +2,19 @@
 #include"HandmadeFunc.h"
 #include<locale>
 #include<codecvt>
-#include<iostream>
+#include"WordDefinition.h"
 History::History(data* data): _data(data)
-{
-
-}
+{}
 History::~History()
-{
-
-}
+{}
 void History::init()
 {
 	//set view
 	view.setSize(sf::Vector2f(1600, 900));
 	view.setCenter(sf::Vector2f(_data->_window->getSize().x / 2, _data->_window->getSize().y / 2));
-	
-	// set historyList
 	windowTranslateY = 0;
 
+	// set historyList
 	historyFile.open(L"Resource\\History.txt", std::ios::in);
 	std::locale loc(std::locale(), new std::codecvt_utf8<wchar_t>);
 	historyFile.imbue(loc);
@@ -39,6 +34,13 @@ void History::init()
 		historyList[i].setFont(_data->_assets->getFont(CHIVOMONO_REGULAR));
 		historyList[i].setFillColor(sf::Color::Black);
 		historyList[i].setCharacterSize(50);
+	}
+	historyListHover = new bool[historyList.size()];
+	historyListClick = new bool[historyList.size()];
+	for (int i = 0; i < historyList.size(); i++)
+	{
+		historyListHover[i] = 0;
+		historyListClick[i] = 0;
 	}
 
 	//Set clone
@@ -92,7 +94,7 @@ void History::processInput()
 				translateY = -30;
 				windowTranslateY -= 30;
 			}
-			if (event.mouseWheelScroll.delta < 0 && windowTranslateY < historyList.size() * 100 - 700) {
+			if (event.mouseWheelScroll.delta < 0 && windowTranslateY < historyList.size() * 100 - 50) {
 				view.move(sf::Vector2f(0, 30));
 				translateY = 30;
 				windowTranslateY += 30;
@@ -114,7 +116,17 @@ void History::processInput()
 					{
 						clone.setString(historyList[i].getString());
 						cloneIdx = i;
+					
 					}
+				}
+			}
+			if (sf::Mouse::isButtonPressed(sf::Mouse::Right))
+			{
+				for (int i = 0; i < historyList.size(); i++)
+				{
+					
+					historyListClick[i] = (historyListHover[i] ? 1 : 0);
+					
 				}
 			}
 			break;
@@ -134,19 +146,40 @@ void History::processInput()
 			break;
 		}
 		backArrHover = isHover(backArr, *_data->_window, windowTranslateY);
+		for (int i = 0; i < historyList.size(); i++)
+		{
+			historyListHover[i] = isHover(historyList[i], *_data->_window, windowTranslateY);
+		}
+
 	}
 }
 void History::update()
 {
 	//Hover
 	(backArrHover ? backArr.setColor(sf::Color(255, 255, 255, 100)) : backArr.setColor(sf::Color::White));
-
+	for (int i = 0; i < historyList.size(); i++)
+	{
+		(historyListHover[i] ? historyList[i].setFillColor(sf::Color(0, 0, 0, 100)) : historyList[i].setFillColor(sf::Color::Black));
+	}
 	//Click
 	if (backArrClick)
 	{
 		historyFile.close();
 		_data->_states->removeState();
 		backArrClick = 0;
+	}
+	for (int i = 0; i < historyList.size(); i++)
+	{
+		if (historyListClick[i])
+		{
+			std::wstring line = historyList[i].getString();
+			std::wstring dtset = line.substr(line.find('(') + 1, line.find(')') - line.find('(') - 1);
+			std::wstring word = line.substr(0, line.find('('));
+			historyFile.close();
+			historyListClick[i] = 0;
+			_data->_states->addState(new WordDefinition(_data, search(getDataset(dtset, _data), word), dtset), 1);
+			
+		}
 	}
 }
 void History::draw()

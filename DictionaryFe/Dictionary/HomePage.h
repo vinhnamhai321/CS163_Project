@@ -9,7 +9,6 @@ private:
 	sf::Time time;
 	sf::Clock clock;
 	sf::View view;
-	int windowTranslateY;
 	std::wfstream historyFile;
 
 	sf::RectangleShape navbar;
@@ -60,6 +59,14 @@ private:
 	bool dataBoxContentHover[3];
 	bool dataBoxHidden;
 	std::wstring getDataSet;
+
+	sf::Text random;
+	bool randomHover;
+	bool randomClick;
+	
+
+	sf::Text status; 
+	bool statusOn;
 public:
 	HomePage(data* data);
 	~HomePage();

@@ -29,7 +29,7 @@ void Dictionary::build() {
     std::ios_base::sync_with_stdio(true);
 
     // Load dataset
-    ee.loadDataSet(EE);
+    //ee.loadDataSet(EE);
     // ev.loadDataSet(EV);
     // ve.loadDataSet(VE);
 }
