@@ -41,6 +41,8 @@ void Trie::loadDataSet(std::string path, std::vector<WordDef> &word)
         word.push_back(w);
 
 	}
+    fin.close();
+
 }
 
 int getIndex(wchar_t letter)
