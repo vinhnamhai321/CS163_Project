@@ -22,6 +22,7 @@ void removeWord(std::wstring line, std::wstring path);
 Trie getDataset(std::wstring dataset, data* _data);
 bool existWord(std::wstring line, std::wstring path);
 std::wstring randomWord(data* _data, int id = -1);
+void addWord(std::wstring keyWord, std::vector<std::wstring> wordDef, std::wstring dataset, data* _data);
 
 
 

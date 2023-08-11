@@ -127,3 +127,20 @@ std::wstring randomWord(data* _data, int id)
 	}
 	return line;
 }
+void addWord(std::wstring keyWord, std::vector<std::wstring> wordDef, std::wstring dataset, data* _data) {
+	// Process keyWord to be lowercase
+	for (wchar_t& c : keyWord)
+		c = towlower(c);
+
+	Trie tree = getDataset(dataset, _data);
+	tree.buildTrie(keyWord, wordDef);
+
+	// Save to file
+	// Write as append mode to "TreeName_addWord.txt"
+	std::wofstream file(L"Resource\\" + dataset + L"addWord.txt", std::ios::app);
+	std::locale loc(std::locale(), new std::codecvt_utf8<wchar_t>);
+	file.imbue(loc);
+	file << '@' << keyWord << '\n';
+	for (const std::wstring& def : wordDef)
+		file << def << '\n';
+}

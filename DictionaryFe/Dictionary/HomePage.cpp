@@ -345,7 +345,7 @@ void HomePage::update()
 	}
 	if (addWordClick)
 	{
-		_data->_states->addState(new CreateWord(_data, L"Add new word"));
+		_data->_states->addState(new CreateWord(_data, L"Add new word", getDataSet));
 		addWordClick = 0;
 	}
 	if (resetClick)

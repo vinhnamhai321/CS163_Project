@@ -173,7 +173,7 @@ void WordDefinition::update()
 	}
 	if (editWordClick)
 	{
-		_data->_states->addState(new CreateWord(_data, L"Edit word", _keyword->keyWord, _keyword->definition));
+		_data->_states->addState(new CreateWord(_data, L"Edit word", _dataset, _keyword->keyWord, _keyword->definition));
 		favFile.close();
 		editWordClick = 0;
 	}

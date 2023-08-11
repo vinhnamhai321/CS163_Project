@@ -10,6 +10,7 @@ private:
 	std::wstring _type;
 	std::wstring _word;
 	std::vector<std::wstring> _def;
+	std::wstring _dtset;
 	sf::View view;
 	int windowTranslateY;
 	int windowTranslateX;
@@ -58,7 +59,7 @@ private:
 	
 
 public:
-	CreateWord(data* data, std::wstring type, std::wstring word = L"", std::vector<std::wstring> def = {});
+	CreateWord(data* data, std::wstring type, std::wstring dtset = L"", std::wstring word = L"", std::vector<std::wstring> def = {});
 	~CreateWord();
 	void init();
 	void processInput();

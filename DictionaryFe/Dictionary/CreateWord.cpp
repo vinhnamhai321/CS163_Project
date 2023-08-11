@@ -1,7 +1,7 @@
 #include "CreateWord.h"
 #include"HandmadeFunc.h"
-CreateWord::CreateWord(data* data, std::wstring type, std::wstring word, std::vector<std::wstring> def) : _data(data), _type(type), 
-_word(word), _def(def), blink(1)
+CreateWord::CreateWord(data* data, std::wstring type, std::wstring dtset, std::wstring word, std::vector<std::wstring> def) 
+: _data(data), _type(type), _dtset(dtset), _word(word), _def(def), blink(1)
 {}
 CreateWord::~CreateWord()
 {}
@@ -411,7 +411,16 @@ void CreateWord::update()
 	}
 	if (submitClick)
 	{
-
+		if (_type == L"Add new word")
+		{
+			std::vector<std::wstring> d;
+			for (int i = 0; i < maxdefBox; i++)
+			{
+				d.push_back(getDef[i]);
+			}
+			addWord(getKeyword, d, _dtset, _data);
+			_data->_states->removeState();
+		}
 		submitClick = 0;
 	}
 	//OverFlow
