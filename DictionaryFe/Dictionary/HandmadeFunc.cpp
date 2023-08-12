@@ -148,3 +148,70 @@ void addWord(std::wstring keyWord, std::vector<std::wstring> wordDef, std::wstri
 	for (const std::wstring& def : wordDef)
 		file << def << '\n';
 }
+void crawl(std::wofstream& fout, Node*& cur)
+{
+	if (!cur)
+		return;
+	if (cur->isWord)
+	{
+		std::wstring s;
+		for (std::wstring item : cur->word->definition)
+			s += item;
+		fout << L"@" << cur->word->keyWord << s << std::endl;
+	}
+	for (int i = 0; i < 106; ++i)
+		crawl(fout, cur->character[i]);
+}
+std::vector<std::wstring> suggestWord(data* _data, std::wstring dtset, std::wstring input)
+{
+	if (dtset == L"Eng-Eng")
+	{
+		return crawl(_data->ee, input);
+	}
+	if (dtset == L"Eng-Vi")
+	{
+		return crawl(_data->ev, input);
+	}
+	if (dtset == L"Vi-Eng")
+	{
+		return crawl(_data->ve, input);
+	}
+	if (dtset == L"Emoji")
+	{
+		return crawl(_data->emoji, input);
+	}
+}
+
+std::vector<std::wstring> crawl(Trie& tree, std::wstring input)
+{
+	std::vector<std::wstring> suggestWord;
+	Node* cur = tree.root;
+	size_t len = input.length();
+	for (int i = 0; i < len; ++i)
+	{
+		wchar_t letter = input[i];
+		int index = getIndex(letter);
+		cur = cur->character[index];
+		if (!cur)
+			return suggestWord;
+	}
+	for (int i = 0; i < 155; ++i)
+	{
+		crawl(cur->character[i], suggestWord);
+	}
+
+	return suggestWord;
+}
+
+void crawl(Node*& cur, std::vector<std::wstring>& word)
+{
+	if (!cur)
+		return;
+	if (cur->isWord)
+	{
+		std::wstring s;
+		word.push_back(cur->word->keyWord);
+	}
+	for (int i = 0; i < 106; ++i)
+		crawl(cur->character[i], word);
+}

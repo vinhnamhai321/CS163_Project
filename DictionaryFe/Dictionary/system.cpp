@@ -62,9 +62,9 @@ void System::run()
 				_data->ve.loadDataSet(VE, _data->veKeyword);
 				_data->ve.loadDataSet(VEADD, _data->veKeyword);
 				_data->veDone = 1;
-				_data->emoji.loadDataSet(EMOJI, _data->emojiIcon);
+				_data->emoji.loadDataSet(EMOJI, _data->emojiKeyword);
+				_data->emoji.loadDataSet(EMOJIADD, _data->emojiKeyword);
 				_data->emojiDone = 1;
-
 			}
 		}
 	}

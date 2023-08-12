@@ -9,7 +9,6 @@
 #include<locale>
 #include<codecvt>
 #include<iostream>
-
 HomePage::HomePage(data* data) : _data(data), dataBoxHidden(1), blink(1)
 {}
 HomePage::~HomePage()
@@ -157,11 +156,26 @@ void HomePage::init()
 	status.setFillColor(sf::Color::Red);
 
 	//Set random
-	random = createText(L"Random word", _data->_window->getSize().x / 2, _data->_window->getSize().y / 2 + 60, 40);
+	random = createText(L"Random word", _data->_window->getSize().x / 2 + 475, _data->_window->getSize().y / 2 - 25, 40);
 	random.setFont(_data->_assets->getFont(HELVETICA_BOLD));
 	random.setFillColor(sf::Color(10, 123, 233, 255));
 
-	
+	//Set suggestBox
+	suggestBox = createRectangleShape(searchBox.getLocalBounds().width, 300,
+		searchBox.getPosition().x - searchBox.getSize().x / 2,
+		searchBox.getPosition().y + 55);
+	suggestBox.setOutlineThickness(3);
+	suggestBox.setOutlineColor(sf::Color(0, 0, 0, 255));
+
+	//Set suggest
+	for (int i = 0; i < 5; i++)
+	{
+		suggest[i] = createText(L"",
+			suggestBox.getPosition().x + 10,
+			suggestBox.getPosition().y + 10 + 50*i, 35);
+		suggest[i].setFont(_data->_assets->getFont(CHIVOMONO_LIGHT));
+		suggest[i].setFillColor(sf::Color::Black);
+	}
 }
 void HomePage::processInput()
 {
@@ -196,11 +210,18 @@ void HomePage::processInput()
 				quizClick = (quizHover ? 1 : 0);
 				searchIconClick = (searchIconHover ? 1 : 0);
 				randomClick = (randomHover ? 1 : 0);
-				
+				for (int i = 0; i < 5; i++)
+				{
+					if (!getSearchBoxText.empty() && suggestHover[i])
+					{
+						getSearchBoxText = suggest[i].getString();
+					}
+				}
 			}
 			break;
 		case sf::Event::TextEntered:
-		
+		{
+			
 			if (searchBoxFocus && !sf::Keyboard::isKeyPressed(sf::Keyboard::Enter))
 			{
 				if (event.key.code == 8)
@@ -243,8 +264,13 @@ void HomePage::processInput()
 				}
 				blink = 1;
 			}
+			getSuggest = suggestWord(_data, getDataSet, getSearchBoxText);
+			for (int i = 0; i < 5 && i < getSuggest.size(); i++)
+			{
+				suggest[i].setString(getSuggest[i]);
+			}
 			break;
-		
+		}
 		case sf::Event::KeyPressed:
 			if (searchBoxFocus)
 			{
@@ -278,11 +304,14 @@ void HomePage::processInput()
 		{
 			dataBoxContentHover[i] = isHover(dataBoxContent[i], *_data->_window);
 		}
+		for (int i = 0; i < 5; i++)
+		{
+			suggestHover[i] = isHover(suggest[i], *_data->_window);
+		}
     }
 }
 void HomePage::update()
 {
-	
 	time = clock.getElapsedTime();
 	if (time.asSeconds() >= 0.5)
 	{
@@ -303,11 +332,16 @@ void HomePage::update()
 	{
 		(dataBoxContentHover[i] ? dataBoxContent[i].setFillColor(sf::Color(0, 0, 0, 100)) : dataBoxContent[i].setFillColor(sf::Color::Black));
 	}
+	for (int i = 0;i < 5; i++)
+	{
+		(suggestHover[i] ? suggest[i].setFillColor(sf::Color(0, 0, 0, 100)) : suggest[i].setFillColor(sf::Color::Black));
+	}
 	//Focus
 	(searchBoxFocus ? searchBox.setOutlineColor(sf::Color(0, 0, 0, 200)) : searchBox.setOutlineColor(sf::Color(0, 0, 0, 100)));
 	((!getSearchBoxText.empty()) ? searchBoxPlaceholder.setString("") : searchBoxPlaceholder.setString("Search..."));
 
 	//Text  
+	
 	dataSet.setString(getDataSet);
 	searchBoxText.setString(getSearchBoxText);
 	((blink && searchBoxFocus) ? cursor.setString("|") : cursor.setString(""));
@@ -405,6 +439,15 @@ void HomePage::draw()
 	_data->_window->draw(dataSet);
 	_data->_window->draw(downArr);
 	_data->_window->draw(random);
+	if (getSearchBoxText != L"")
+	{
+		_data->_window->draw(suggestBox);
+		for (int i = 0; i < 5; i++)
+		{
+			_data->_window->draw(suggest[i]);
+		}
+	}
+	
 	if (!dataBoxHidden)
 	{
 		_data->_window->draw(dataBox);
@@ -417,6 +460,7 @@ void HomePage::draw()
 	{
 		_data->_window->draw(status);
 	}
+	
 	//navbar
 	_data->_window->draw(navbar);
 	_data->_window->draw(favList);

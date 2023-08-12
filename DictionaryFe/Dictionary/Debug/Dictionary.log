@@ -1,6 +1,5 @@
-﻿  assetManager.cpp
-  Confirm.cpp
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Confirm.cpp(17,91): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+﻿  HomePage.cpp
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\HomePage.cpp(25,91): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int
@@ -9,7 +8,7 @@ C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Confirm.cpp(17,91)
           [
               T=float
           ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Confirm.cpp(17,58): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\HomePage.cpp(25,58): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int
@@ -18,73 +17,27 @@ C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Confirm.cpp(17,58)
           [
               T=float
           ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Confirm.cpp(22,31): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\HomePage.cpp(27,57): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
           with
           [
               T=unsigned int
           ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Confirm.cpp(21,31): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\HomePage.cpp(58,38): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
           with
           [
               T=unsigned int
           ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Confirm.cpp(20,90): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\HomePage.cpp(57,38): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
           with
           [
               T=unsigned int
           ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Confirm.cpp(20,57): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\HomePage.cpp(56,63): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
           with
           [
               T=unsigned int
           ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Confirm.cpp(30,35): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Confirm.cpp(35,64): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Confirm.cpp(42,35): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Confirm.cpp(47,62): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Confirm.cpp(52,98): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Confirm.cpp(52,63): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.h(12,102): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Confirm.cpp(74,54): message : see reference to function template instantiation 'bool isHover<sf::RectangleShape>(hover,sf::Window &,int,int)' being compiled
-          with
-          [
-              hover=sf::RectangleShape
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.h(12,57): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-  CreateWord.cpp
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\CreateWord.cpp(13,91): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\HomePage.cpp(87,74): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int
@@ -93,7 +46,7 @@ C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\CreateWord.cpp(13,
           [
               T=float
           ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\CreateWord.cpp(13,58): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\HomePage.cpp(100,70): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int
@@ -102,163 +55,22 @@ C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\CreateWord.cpp(13,
           [
               T=float
           ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\CreateWord.cpp(20,40): warning C4305: 'argument': truncation from 'double' to 'T'
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\HomePage.cpp(101,43): warning C4305: 'argument': truncation from 'double' to 'T'
           with
           [
               T=float
           ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\CreateWord.cpp(28,54): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\HomePage.cpp(106,31): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
           with
           [
               T=unsigned int
           ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\CreateWord.cpp(124,40): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\HomePage.cpp(105,35): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
           with
           [
               T=unsigned int
           ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\CreateWord.cpp(123,35): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\CreateWord.cpp(130,58): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\CreateWord.cpp(129,40): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\CreateWord.cpp(158,29): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\CreateWord.cpp(159,33): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\CreateWord.cpp(160,31): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\CreateWord.cpp(171,14): warning C4018: '<': signed/unsigned mismatch
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\CreateWord.cpp(192,53): warning C4244: '=': conversion from 'T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\CreateWord.cpp(197,15): warning C4018: '<': signed/unsigned mismatch
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\CreateWord.cpp(215,15): warning C4018: '<': signed/unsigned mismatch
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\CreateWord.cpp(236,52): warning C4244: '=': conversion from 'T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\CreateWord.cpp(241,16): warning C4018: '<': signed/unsigned mismatch
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\CreateWord.cpp(262,109): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\CreateWord.cpp(262,63): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=int
-          ]
-          and
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\CreateWord.cpp(293,26): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\CreateWord.cpp(294,30): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\CreateWord.cpp(295,28): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\CreateWord.cpp(338,49): warning C4244: '=': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\CreateWord.cpp(343,49): warning C4244: '=': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\CreateWord.cpp(348,12): warning C4018: '<': signed/unsigned mismatch
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\CreateWord.cpp(355,49): warning C4244: '=': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\CreateWord.cpp(366,48): warning C4244: '=': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\CreateWord.cpp(371,48): warning C4244: '=': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\CreateWord.cpp(376,13): warning C4018: '<': signed/unsigned mismatch
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\CreateWord.cpp(383,48): warning C4244: '=': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\CreateWord.cpp(429,16): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\CreateWord.cpp(430,35): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\CreateWord.cpp(436,17): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\CreateWord.cpp(437,35): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.h(12,102): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\CreateWord.cpp(299,86): message : see reference to function template instantiation 'bool isHover<sf::Sprite>(hover,sf::Window &,int,int)' being compiled
-          with
-          [
-              hover=sf::Sprite
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.h(12,57): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-  FavList.cpp
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\FavList.cpp(15,91): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\HomePage.cpp(121,67): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int
@@ -267,717 +79,58 @@ C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\FavList.cpp(15,91)
           [
               T=float
           ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\FavList.cpp(15,58): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\HomePage.cpp(122,42): warning C4305: 'argument': truncation from 'double' to 'T'
+          with
+          [
+              T=float
+          ]
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\HomePage.cpp(159,109): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
           with
           [
               T=unsigned int
           ]
-          and
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\FavList.cpp(32,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\FavList.cpp(34,71): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\FavList.cpp(41,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\FavList.cpp(57,40): warning C4305: 'argument': truncation from 'double' to 'T'
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\FavList.cpp(65,54): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\HomePage.cpp(159,70): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
           with
           [
               T=unsigned int
           ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\FavList.cpp(71,43): warning C4305: 'argument': truncation from 'double' to 'T'
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\HomePage.cpp(230,14): warning C4018: '<': signed/unsigned mismatch
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\HomePage.cpp(251,50): warning C4244: '=': conversion from 'T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\FavList.cpp(92,61): warning C4018: '<': signed/unsigned mismatch
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\FavList.cpp(97,29): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\HomePage.cpp(256,15): warning C4018: '<': signed/unsigned mismatch
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\HomePage.cpp(268,31): warning C4018: '<': signed/unsigned mismatch
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\HomePage.cpp(353,33): warning C4244: '=': conversion from 'const T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\FavList.cpp(98,33): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\HomePage.cpp(358,33): warning C4244: '=': conversion from 'const T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\FavList.cpp(99,31): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\HomePage.cpp(363,12): warning C4018: '<': signed/unsigned mismatch
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\HomePage.cpp(370,33): warning C4244: '=': conversion from 'const T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\FavList.cpp(100,36): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\HandmadeFunc.h(12,102): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\FavList.cpp(107,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\FavList.cpp(119,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\FavList.cpp(139,107): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\FavList.cpp(139,61): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-          with
-          [
-              T=int
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\FavList.cpp(143,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\FavList.cpp(154,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\FavList.cpp(165,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\FavList.cpp(183,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.h(12,102): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\FavList.cpp(109): message : see reference to function template instantiation 'bool isHover<_Ty>(hover,sf::Window &,int,int)' being compiled
-          with
-          [
-              _Ty=sf::Text,
-              hover=sf::Text
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.h(12,57): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-  HandmadeFunc.cpp
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\system.h(11,7): error C3646: 'ee': unknown override specifier
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\system.h(11,9): error C2059: syntax error: ','
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\system.h(11,24): error C2238: unexpected token(s) preceding ';'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\system.h(13,14): error C2065: 'WordDef': undeclared identifier
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\system.h(13,7): error C2923: 'std::vector': 'WordDef' is not a valid template type argument for parameter '_Ty'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\system.h(13,14): message : see declaration of 'WordDef'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\system.h(13,7): error C2976: 'std::vector': too few template arguments
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\vector(494,1): message : see declaration of 'std::vector'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\system.h(14,6): error C2512: 'std::vector': no appropriate default constructor available
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\vector(494,1): message : see declaration of 'std::vector'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.cpp(41,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.cpp(53,17): error C2039: 'ee': is not a member of 'data'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\system.h(6,8): message : see declaration of 'data'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.cpp(57,17): error C2039: 'ev': is not a member of 'data'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\system.h(6,8): message : see declaration of 'data'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.cpp(61,17): error C2039: 've': is not a member of 'data'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\system.h(6,8): message : see declaration of 'data'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.cpp(65,17): error C2039: 'emoji': is not a member of 'data'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\system.h(6,8): message : see declaration of 'data'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.cpp(88,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.cpp(99,38): error C2662: 'allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type std::vector<_Ty,_Alloc>::size(void) noexcept const': cannot convert 'this' pointer from 'std::vector' to 'const std::vector<_Ty,_Alloc> &'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.cpp(99,27): message : Reason: cannot convert from 'std::vector' to 'const std::vector<_Ty,_Alloc>'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.cpp(99,27): message : Conversion requires a second user-defined-conversion operator or constructor
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\vector(1930,39): message : see declaration of 'std::vector<_Ty,_Alloc>::size'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.cpp(99,38): message : while trying to match the argument list '()'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.cpp(100,15): error C2678: binary '[': no operator found which takes a left-hand operand of type 'std::vector' (or there is no acceptable conversion)
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\vector(1955,40): message : could be 'const _Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept const'
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\vector(1945,34): message : or       '_Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.cpp(100,15): message : while trying to match the argument list '(std::vector, int)'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.cpp(103,35): error C2662: 'allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type std::vector<_Ty,_Alloc>::size(void) noexcept const': cannot convert 'this' pointer from 'std::vector' to 'const std::vector<_Ty,_Alloc> &'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.cpp(103,24): message : Reason: cannot convert from 'std::vector' to 'const std::vector<_Ty,_Alloc>'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.cpp(103,24): message : Conversion requires a second user-defined-conversion operator or constructor
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\vector(1930,39): message : see declaration of 'std::vector<_Ty,_Alloc>::size'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.cpp(103,35): message : while trying to match the argument list '()'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.cpp(104,16): error C2678: binary '[': no operator found which takes a left-hand operand of type 'std::vector' (or there is no acceptable conversion)
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\vector(1955,40): message : could be 'const _Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept const'
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\vector(1945,34): message : or       '_Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.cpp(104,16): message : while trying to match the argument list '(std::vector, int)'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.cpp(111,38): error C2662: 'allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type std::vector<_Ty,_Alloc>::size(void) noexcept const': cannot convert 'this' pointer from 'std::vector' to 'const std::vector<_Ty,_Alloc> &'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.cpp(111,27): message : Reason: cannot convert from 'std::vector' to 'const std::vector<_Ty,_Alloc>'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.cpp(111,27): message : Conversion requires a second user-defined-conversion operator or constructor
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\vector(1930,39): message : see declaration of 'std::vector<_Ty,_Alloc>::size'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.cpp(111,38): message : while trying to match the argument list '()'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.cpp(112,15): error C2678: binary '[': no operator found which takes a left-hand operand of type 'std::vector' (or there is no acceptable conversion)
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\vector(1955,40): message : could be 'const _Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept const'
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\vector(1945,34): message : or       '_Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.cpp(112,15): message : while trying to match the argument list '(std::vector, int)'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.cpp(115,35): error C2662: 'allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type std::vector<_Ty,_Alloc>::size(void) noexcept const': cannot convert 'this' pointer from 'std::vector' to 'const std::vector<_Ty,_Alloc> &'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.cpp(115,24): message : Reason: cannot convert from 'std::vector' to 'const std::vector<_Ty,_Alloc>'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.cpp(115,24): message : Conversion requires a second user-defined-conversion operator or constructor
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\vector(1930,39): message : see declaration of 'std::vector<_Ty,_Alloc>::size'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.cpp(115,35): message : while trying to match the argument list '()'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.cpp(116,16): error C2678: binary '[': no operator found which takes a left-hand operand of type 'std::vector' (or there is no acceptable conversion)
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\vector(1955,40): message : could be 'const _Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept const'
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\vector(1945,34): message : or       '_Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.cpp(116,16): message : while trying to match the argument list '(std::vector, int)'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.cpp(123,38): error C2662: 'allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type std::vector<_Ty,_Alloc>::size(void) noexcept const': cannot convert 'this' pointer from 'std::vector' to 'const std::vector<_Ty,_Alloc> &'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.cpp(123,27): message : Reason: cannot convert from 'std::vector' to 'const std::vector<_Ty,_Alloc>'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.cpp(123,27): message : Conversion requires a second user-defined-conversion operator or constructor
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\vector(1930,39): message : see declaration of 'std::vector<_Ty,_Alloc>::size'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.cpp(123,38): message : while trying to match the argument list '()'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.cpp(124,15): error C2678: binary '[': no operator found which takes a left-hand operand of type 'std::vector' (or there is no acceptable conversion)
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\vector(1955,40): message : could be 'const _Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept const'
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\vector(1945,34): message : or       '_Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.cpp(124,15): message : while trying to match the argument list '(std::vector, int)'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.cpp(127,35): error C2662: 'allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type std::vector<_Ty,_Alloc>::size(void) noexcept const': cannot convert 'this' pointer from 'std::vector' to 'const std::vector<_Ty,_Alloc> &'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.cpp(127,24): message : Reason: cannot convert from 'std::vector' to 'const std::vector<_Ty,_Alloc>'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.cpp(127,24): message : Conversion requires a second user-defined-conversion operator or constructor
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\vector(1930,39): message : see declaration of 'std::vector<_Ty,_Alloc>::size'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.cpp(127,35): message : while trying to match the argument list '()'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.cpp(128,16): error C2678: binary '[': no operator found which takes a left-hand operand of type 'std::vector' (or there is no acceptable conversion)
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\vector(1955,40): message : could be 'const _Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept const'
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\vector(1945,34): message : or       '_Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.cpp(128,16): message : while trying to match the argument list '(std::vector, int)'
-  HashMap.cpp
-  History.cpp
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\History.cpp(14,91): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\History.cpp(14,58): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\History.cpp(31,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\History.cpp(33,79): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\History.cpp(40,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\History.cpp(56,40): warning C4305: 'argument': truncation from 'double' to 'T'
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\History.cpp(64,54): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\History.cpp(70,45): warning C4305: 'argument': truncation from 'double' to 'T'
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\History.cpp(76,43): warning C4305: 'argument': truncation from 'double' to 'T'
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\History.cpp(97,61): warning C4018: '<': signed/unsigned mismatch
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\History.cpp(102,29): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\History.cpp(103,33): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\History.cpp(104,31): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\History.cpp(105,38): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\History.cpp(106,36): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\History.cpp(113,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\History.cpp(125,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\History.cpp(145,107): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\History.cpp(145,61): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-          with
-          [
-              T=int
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\History.cpp(149,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\History.cpp(160,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\History.cpp(171,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\History.cpp(189,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.h(12,102): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\History.cpp(115): message : see reference to function template instantiation 'bool isHover<_Ty>(hover,sf::Window &,int,int)' being compiled
-          with
-          [
-              _Ty=sf::Text,
-              hover=sf::Text
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.h(12,57): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-  HomePage.cpp
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HomePage.cpp(26,91): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HomePage.cpp(26,58): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HomePage.cpp(28,57): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HomePage.cpp(59,38): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HomePage.cpp(58,38): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HomePage.cpp(57,63): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HomePage.cpp(88,74): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HomePage.cpp(101,70): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HomePage.cpp(102,43): warning C4305: 'argument': truncation from 'double' to 'T'
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HomePage.cpp(107,31): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HomePage.cpp(106,35): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HomePage.cpp(122,67): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HomePage.cpp(123,42): warning C4305: 'argument': truncation from 'double' to 'T'
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HomePage.cpp(160,103): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HomePage.cpp(160,66): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HomePage.cpp(209,14): warning C4018: '<': signed/unsigned mismatch
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HomePage.cpp(230,50): warning C4244: '=': conversion from 'T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HomePage.cpp(235,15): warning C4018: '<': signed/unsigned mismatch
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HomePage.cpp(319,33): warning C4244: '=': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HomePage.cpp(324,33): warning C4244: '=': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HomePage.cpp(329,12): warning C4018: '<': signed/unsigned mismatch
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HomePage.cpp(336,33): warning C4244: '=': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.h(12,102): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HomePage.cpp(268,50): message : see reference to function template instantiation 'bool isHover<sf::Text>(hover,sf::Window &,int,int)' being compiled
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\HomePage.cpp(294,50): message : see reference to function template instantiation 'bool isHover<sf::Text>(hover,sf::Window &,int,int)' being compiled
           with
           [
               hover=sf::Text
           ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.h(12,57): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\DELL\Documents\DictionaryFe\Dictionary\HandmadeFunc.h(12,57): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-  Loading.cpp
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Loading.cpp(33,106): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Loading.cpp(33,67): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Loading.cpp(37,109): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Loading.cpp(37,70): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Loading.cpp(38,45): warning C4305: 'argument': truncation from 'double' to 'T'
-          with
-          [
-              T=float
-          ]
-  Quiz.cpp
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Quiz.cpp(15,91): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Quiz.cpp(15,58): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Quiz.cpp(20,40): warning C4305: 'argument': truncation from 'double' to 'T'
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Quiz.cpp(30,58): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Quiz.cpp(34,54): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Quiz.cpp(38,46): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Quiz.cpp(47,35): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Quiz.cpp(46,31): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Quiz.cpp(53,41): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Quiz.cpp(52,35): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Quiz.cpp(107,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Quiz.cpp(124,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Quiz.cpp(135,107): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Quiz.cpp(135,68): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Quiz.cpp(151,73): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Quiz.cpp(152,24): warning C4018: '<': signed/unsigned mismatch
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Quiz.cpp(175,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Quiz.cpp(186,107): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Quiz.cpp(186,68): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Quiz.cpp(202,73): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Quiz.cpp(203,24): warning C4018: '<': signed/unsigned mismatch
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Quiz.cpp(226,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Quiz.cpp(237,107): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Quiz.cpp(237,68): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Quiz.cpp(253,73): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Quiz.cpp(254,24): warning C4018: '<': signed/unsigned mismatch
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.h(12,102): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Quiz.cpp(78,50): message : see reference to function template instantiation 'bool isHover<sf::Sprite>(hover,sf::Window &,int,int)' being compiled
-          with
-          [
-              hover=sf::Sprite
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.h(12,57): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-  Source.cpp
-  stateMachine.cpp
-  system.cpp
-  Trie.cpp
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\system.h(11,7): error C3646: 'ee': unknown override specifier
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\system.h(11,9): error C2059: syntax error: ','
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\system.h(11,24): error C2238: unexpected token(s) preceding ';'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\system.h(13,14): error C2065: 'WordDef': undeclared identifier
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\system.h(13,7): error C2923: 'std::vector': 'WordDef' is not a valid template type argument for parameter '_Ty'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\system.h(13,14): message : see declaration of 'WordDef'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\system.h(13,7): error C2976: 'std::vector': too few template arguments
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\vector(494,1): message : see declaration of 'std::vector'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\system.h(14,6): error C2512: 'std::vector': no appropriate default constructor available
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\vector(494,1): message : see declaration of 'std::vector'
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\Trie.cpp(11,24): warning C4018: '<': signed/unsigned mismatch
-  WordDefinition.cpp
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\WordDefinition.cpp(21,91): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\WordDefinition.cpp(21,58): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\WordDefinition.cpp(26,40): warning C4305: 'argument': truncation from 'double' to 'T'
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\WordDefinition.cpp(34,19): warning C4018: '<': signed/unsigned mismatch
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\WordDefinition.cpp(39,42): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\WordDefinition.cpp(75,54): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\WordDefinition.cpp(105,61): warning C4018: '<': signed/unsigned mismatch
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\WordDefinition.cpp(110,29): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\WordDefinition.cpp(111,36): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\WordDefinition.cpp(112,33): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\WordDefinition.cpp(113,32): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\WordDefinition.cpp(114,34): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\WordDefinition.cpp(115,36): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\WordDefinition.cpp(133,26): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\WordDefinition.cpp(134,30): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\WordDefinition.cpp(135,33): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\WordDefinition.cpp(136,29): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\WordDefinition.cpp(137,31): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\WordDefinition.cpp(138,33): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\WordDefinition.cpp(196,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.h(12,102): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\WordDefinition.cpp(144,86): message : see reference to function template instantiation 'bool isHover<sf::Sprite>(hover,sf::Window &,int,int)' being compiled
-          with
-          [
-              hover=sf::Sprite
-          ]
-C:\Users\DELL\Documents\CS163_Project\DictionaryFe\Dictionary\HandmadeFunc.h(12,57): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-  Generating Code...
+  Dictionary.vcxproj -> C:\Users\DELL\Documents\DictionaryFe\Debug\Dictionary.exe

@@ -64,9 +64,14 @@ private:
 	bool randomHover;
 	bool randomClick;
 	
-
 	sf::Text status; 
 	bool statusOn;
+
+	std::vector<std::wstring> getSuggest;
+	sf::RectangleShape suggestBox;
+	sf::Text suggest[5];
+	bool suggestHover[5];
+	bool suggestClick[5];
 public:
 	HomePage(data* data);
 	~HomePage();

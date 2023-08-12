@@ -3,7 +3,6 @@
 #include<codecvt>
 #include<locale>
 #include<string>
-
 void Trie::buildTrie(std::wstring keyWord, std::vector<std::wstring> wordDef)
 {
 	Node* cur = root;
@@ -35,16 +34,14 @@ void Trie::loadDataSet(std::string path, std::vector<WordDef> &word)
 		std::vector<std::wstring> wordDef;
 		std::wstring keyWord = get.substr(1, get.length() - 1);	//remove '@' character from key word
 		getline(fin, get);
-        
         for (; !fin.eof() && get[0] != '@'; getline(fin, get))	//set condition whenever meet new key word
         {
             std::wstring def;
             if (get[0] == L'-')
             {
                 def = get.substr(2, get.length() - 2);
-                //myMap.push(def, keyWord);
             }
-            wordDef.push_back(def);//push all definition of current key word
+            wordDef.push_back(def);
         }
 		buildTrie(keyWord, wordDef);	//create new key word in trie
         WordDef w(keyWord, wordDef);
@@ -370,73 +367,5 @@ WordDef* search(Trie tree, std::wstring keyWord)
 		return nullptr;
 	return cur->word;
 }
-//WordDef* searchDefinition(Trie& tree, std::wstring def)
-//{
-//    long long idx = setIndex(def);
-//    std::wstring findKey{};
-//    for (Table* cur = tree.myMap.myTable[idx]; cur; cur = cur->pNext)
-//    {
-//        if (def.compare(cur->def) == 0)
-//            findKey = cur->keyWord;
-//    }
-//    return search(tree, findKey);
-//}
-//void crawl(std::wofstream& fout, Node*& cur)
-//{
-//    if (!cur)
-//        return;
-//    if (cur->isWord)
-//    {
-//        std::wstring s;
-//        for (std::wstring item : cur->word->definition)
-//            s += item;
-//        fout << L"@" << cur->word->keyWord << s << std::endl;
-//    }
-//    for (int i = 0; i < 106; ++i)
-//        crawl(fout, cur->character[i]);
-//}
-//std::vector<std::wstring> suggestWord(data* _data, std::wstring dtset, std::wstring input)
-//{
-//    if (dtset == L"Eng-Eng")
-//        return crawl(_data->ee, input);
-//    if (dtset == L"Eng-Vi")
-//        return crawl(_data->ev, input);
-//    if (dtset == L"Vi-Eng")
-//        return crawl(_data->ve, input);
-//    if (dtset == L"Emoji")
-//        return crawl(_data->emoji, input);
-//}
-//
-//std::vector<std::wstring> crawl(Trie& tree, std::wstring input)
-//{
-//    std::vector<std::wstring> suggestWord;
-//    Node* cur = tree.root;
-//    size_t len = input.length();
-//    for (int i = 0; i < len; ++i)
-//    {
-//        wchar_t letter = input[i];
-//        int index = getIndex(letter);
-//        cur = cur->character[index];
-//        if (!cur)
-//            return suggestWord;
-//    }
-//    for (int i = 0; i < 155; ++i)
-//    {
-//        crawl(cur->character[i], suggestWord);
-//    }
-//
-//    return suggestWord;
-//}
-//
-//void crawl(Node*& cur, std::vector<std::wstring>& word)
-//{
-//    if (!cur)
-//        return;
-//    if (cur->isWord)
-//    {
-//        std::wstring s;
-//        word.push_back(cur->word->keyWord);
-//    }
-//    for (int i = 0; i < 106; ++i)
-//        crawl(cur->character[i], word);
-//}
+
+

@@ -10,7 +10,7 @@ struct data
 	sf::RenderWindow* _window;
 	Trie ee, ev, ve, emoji;
 	bool eeDone, evDone, veDone, emojiDone;
-	std::vector<WordDef> eeKeyword, evKeyword, veKeyword, emojiIcon;
+	std::vector<WordDef> eeKeyword, evKeyword, veKeyword, emojiKeyword;
 	data()
 	{
 		_assets = new assetManager;

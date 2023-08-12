@@ -23,6 +23,13 @@ Trie getDataset(std::wstring dataset, data* _data);
 bool existWord(std::wstring line, std::wstring path);
 std::wstring randomWord(data* _data, int id = -1);
 void addWord(std::wstring keyWord, std::vector<std::wstring> wordDef, std::wstring dataset, data* _data);
+std::vector<std::wstring> suggestWord(data* _data, std::wstring dtset, std::wstring input);	//get the input data for specific data-set
+
+void crawl(std::wofstream& fout, Node*& cur);
+
+std::vector<std::wstring> crawl(Trie& tree, std::wstring input);	/*return vector include suggested words
+																	for input string*/
+void crawl(Node*& cur, std::vector<std::wstring>& word);				//crawl from the start point - find suggested word
 
 
 
