@@ -59,7 +59,13 @@ WordDef* searchDefinition(Trie& tree, std::wstring def);
 
 std::vector<std::wstring> edit(Trie& tree, std::wstring keyword);
 
-void edit(Trie& tree, std::wstring keyword, std::wofstream& fout);
+WordDef* edit(int data, std::wstring keyword);
+
+WordDef* editWord(Trie& tree, std::wstring keyword);
+
+void build_edit_trie(Trie& edit_tree, int data, std::wstring keyword);
+
+void export_edit_file(std::wstring path, std::wstring keyword);
 
 void remove(Trie& tree, std::wstring keyword);
 
