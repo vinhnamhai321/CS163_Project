@@ -8,6 +8,7 @@
 #include"Quiz.h"
 #include<locale>
 #include<codecvt>
+#include<iostream>
 
 HomePage::HomePage(data* data) : _data(data), dataBoxHidden(1), blink(1)
 {}
@@ -122,7 +123,7 @@ void HomePage::init()
 	downArr.setScale(sf::Vector2f(0.12, 0.12));
 
 	//Set dataBox
-	dataBox = createRectangleShape(190, 170,
+	dataBox = createRectangleShape(190, 230,
 		searchBox.getPosition().x - searchBox.getSize().x / 2 - 230,
 		downArr.getPosition().y + 30);
 	dataBox.setOutlineThickness(3);
@@ -138,7 +139,10 @@ void HomePage::init()
 	dataBoxContent[2] = createText(L"Vi-Eng",
 		dataBox.getPosition().x + 10,
 		dataBox.getPosition().y + 110, 35);
-	for (int i = 0; i < 3; i++)
+	dataBoxContent[3] = createText(L"Emoji",
+		dataBox.getPosition().x + 10,
+		dataBox.getPosition().y + 160, 35);
+	for (int i = 0; i < 4; i++)
 	{
 		dataBoxContent[i].setFont(_data->_assets->getFont(CHIVOMONO_LIGHT));
 		dataBoxContent[i].setFillColor(sf::Color::Black);
@@ -178,7 +182,7 @@ void HomePage::processInput()
 					curPosX = sf::Mouse::getPosition(*_data->_window).x;
 				}
 				dataBoxHidden = (downArrHover ? !dataBoxHidden : dataBoxHidden);
-				for (int i = 0; i < 3; i++)
+				for (int i = 0; i < 4; i++)
 				{
 					if (!dataBoxHidden && dataBoxContentHover[i])
 					{
@@ -270,7 +274,7 @@ void HomePage::processInput()
 		downArrHover = isHover(downArr, *_data->_window);
 		randomHover = isHover(random, *_data->_window);
 		
-		for (int i = 0; i < 3; i++)
+		for (int i = 0; i < 4; i++)
 		{
 			dataBoxContentHover[i] = isHover(dataBoxContent[i], *_data->_window);
 		}
@@ -278,6 +282,7 @@ void HomePage::processInput()
 }
 void HomePage::update()
 {
+	
 	time = clock.getElapsedTime();
 	if (time.asSeconds() >= 0.5)
 	{
@@ -294,7 +299,7 @@ void HomePage::update()
 	
 	(searchIconHover ? searchIconBox.setFillColor(sf::Color(10, 123, 233, 150)) : searchIconBox.setFillColor(sf::Color(10, 123, 233, 255)));
 	(downArrHover ? downArr.setColor(sf::Color(255, 255, 255, 100)) : downArr.setColor(sf::Color::White));
-	for (int i = 0;i < 3; i++)
+	for (int i = 0;i < 4; i++)
 	{
 		(dataBoxContentHover[i] ? dataBoxContent[i].setFillColor(sf::Color(0, 0, 0, 100)) : dataBoxContent[i].setFillColor(sf::Color::Black));
 	}
@@ -371,8 +376,10 @@ void HomePage::update()
 		std::wstring line = getSearchBoxText + L"(" + dtset + L")";
 		if (!existWord(line , L"Resource\\RemoveWord.txt") && search(getDataset(dataSet.getString(), _data), getSearchBoxText) != nullptr)
 		{
-			
-			historyFile << line << std::endl;
+			if (getDataSet != L"Emoji")
+			{
+				historyFile << line << std::endl;
+			}
 			_data->_states->addState(new WordDefinition(_data, search(getDataset(dataSet.getString(), _data), getSearchBoxText), dataSet.getString()));
 			getSearchBoxText.clear();
 		}
@@ -404,6 +411,7 @@ void HomePage::draw()
 		_data->_window->draw(dataBoxContent[0]);
 		_data->_window->draw(dataBoxContent[1]);
 		_data->_window->draw(dataBoxContent[2]);
+		_data->_window->draw(dataBoxContent[3]);
 	}
 	if (statusOn)
 	{

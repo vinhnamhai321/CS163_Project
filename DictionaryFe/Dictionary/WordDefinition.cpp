@@ -161,7 +161,7 @@ void WordDefinition::update()
 		_data->_states->removeState();
 		backArrClick = 0;
 	}
-	if (addFavListClick)
+	if (addFavListClick && _dataset != L"Emoji")
 	{
 		std::wstring line = _keyword->keyWord + L"(" + _dataset + L")";
 		if (!existWord(line, L"Resource\\FavList.txt"))
@@ -199,7 +199,10 @@ void WordDefinition::draw()
 	}
 	_data->_window->draw(bar);
 	_data->_window->draw(backArr);
-	_data->_window->draw(addFavList);
+	if (_dataset != L"Emoji")
+	{
+		_data->_window->draw(addFavList);
+	}
 	if (statusOn)
 	{
 		_data->_window->draw(status);

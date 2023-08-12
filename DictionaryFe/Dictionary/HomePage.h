@@ -55,8 +55,8 @@ private:
 	sf::Sprite downArr;
 	bool downArrHover;
 	sf::RectangleShape dataBox;
-	sf::Text dataBoxContent[3];
-	bool dataBoxContentHover[3];
+	sf::Text dataBoxContent[4];
+	bool dataBoxContentHover[4];
 	bool dataBoxHidden;
 	std::wstring getDataSet;
 

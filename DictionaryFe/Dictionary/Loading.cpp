@@ -58,7 +58,7 @@ void Loading::update()
 	{
 		clock.restart();
 	}
-	if (_data->eeDone && _data->evDone && _data->veDone)
+	if (_data->eeDone && _data->evDone && _data->veDone && _data->emojiDone)
 	{
 		_data->_states->addState(new HomePage(_data));
 	}

@@ -60,6 +60,10 @@ Trie getDataset(std::wstring dataset, data* _data)
 	{
 		return _data->ve;
 	}
+	else if (dataset == L"Emoji")
+	{
+		return _data->emoji;
+	}
 }
 bool existWord(std::wstring line, std::wstring path)
 {

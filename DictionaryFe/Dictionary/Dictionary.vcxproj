@@ -24,6 +24,7 @@
     <ClCompile Include="CreateWord.cpp" />
     <ClCompile Include="FavList.cpp" />
     <ClCompile Include="HandmadeFunc.cpp" />
+    <ClCompile Include="HashMap.cpp" />
     <ClCompile Include="History.cpp" />
     <ClCompile Include="HomePage.cpp" />
     <ClCompile Include="Loading.cpp" />
@@ -40,6 +41,7 @@
     <ClInclude Include="CreateWord.h" />
     <ClInclude Include="FavList.h" />
     <ClInclude Include="HandmadeFunc.h" />
+    <ClInclude Include="HashMap.h" />
     <ClInclude Include="History.h" />
     <ClInclude Include="HomePage.h" />
     <ClInclude Include="Loading.h" />

@@ -3,6 +3,7 @@
 #include<codecvt>
 #include<locale>
 #include<string>
+
 void Trie::buildTrie(std::wstring keyWord, std::vector<std::wstring> wordDef)
 {
 	Node* cur = root;
@@ -34,8 +35,17 @@ void Trie::loadDataSet(std::string path, std::vector<WordDef> &word)
 		std::vector<std::wstring> wordDef;
 		std::wstring keyWord = get.substr(1, get.length() - 1);	//remove '@' character from key word
 		getline(fin, get);
+        
         for (; !fin.eof() && get[0] != '@'; getline(fin, get))	//set condition whenever meet new key word
-            wordDef.push_back(get);		//push all definition of current key word
+        {
+            std::wstring def;
+            if (get[0] == L'-')
+            {
+                def = get.substr(2, get.length() - 2);
+                //myMap.push(def, keyWord);
+            }
+            wordDef.push_back(def);//push all definition of current key word
+        }
 		buildTrie(keyWord, wordDef);	//create new key word in trie
         WordDef w(keyWord, wordDef);
         word.push_back(w);
@@ -47,23 +57,25 @@ void Trie::loadDataSet(std::string path, std::vector<WordDef> &word)
 
 int getIndex(wchar_t letter)
 {
-	if (letter < L'a' || letter > L'z')
-	{
-		if(letter > L'0' && letter < L'9')
-		return 26 + letter - L'0';
-		else
-		{
-			switch (letter)
-			{
-			case L'-':
-				return 36;
-				break;
-			case L'\'':
-				return 37;
-				break;
-			case L' ':
-				return 38;
-				break;
+    if (letter >= L'A' && letter <= L'Z')
+        return 129 + letter - L'A';
+    if (letter < L'a' || letter > L'z')
+    {
+        if (letter > L'0' && letter < L'9')
+            return 26 + letter - L'0';
+        else
+        {
+            switch (letter)
+            {
+            case L'-':
+                return 36;
+                break;
+            case L'\'':
+                return 37;
+                break;
+            case L' ':
+                return 38;
+                break;
             case L'á':
                 return 39;
                 break;
@@ -265,23 +277,82 @@ int getIndex(wchar_t letter)
             case L'ự':
                 return 105;
                 break;
-			}
-		}
-	}
-	return letter - L'a';
+            case L'%':
+                return 106;
+                break;
+            case L')':
+                return 107;
+                break;
+            case L'(':
+                return 108;
+                break;
+            case L'*':
+                return 109;
+                break;
+            case L':':
+                return 110;
+                break;
+            case L',':
+                return 111;
+                break;
+            case L'<':
+                return 112;
+                break;
+            case L'+':
+                return 113;
+                break;
+            case L'=':
+                return 114;
+                break;
+            case L'.':
+                return 115;
+                break;
+            case L'[':
+                return 116;
+                break;
+            case L']':
+                return 117;
+                break;
+            case L'#':
+                return 118;
+                break;
+            case L'&':
+                return 119;
+                break;
+            case L'/':
+                return 120;
+                break;
+            case L'>':
+                return 121;
+                break;
+            case L'?':
+                return 122;
+                break;
+            case L'@':
+                return 123;
+                break;
+            case L'`':
+                return 124;
+                break;
+            case L'^':
+                return 125;
+                break;
+            case L'_':
+                return 126;
+                break;
+            case L';':
+                return 127;
+                break;
+            case L'!':
+                return 128;
+                break;
+            }
+        }
+    }
+    return letter - L'a';
 }
 
-void Trie::deleteTrie(Node*& root)
-{
-	if (!root)
-		return;
-	else
-	{
-		for (int i = 0; i < 38; ++i)
-			deleteTrie(root->character[i]);
-		delete root;
-	}
-}
+
 
 WordDef* search(Trie tree, std::wstring keyWord)
 {
@@ -299,4 +370,73 @@ WordDef* search(Trie tree, std::wstring keyWord)
 		return nullptr;
 	return cur->word;
 }
-
+//WordDef* searchDefinition(Trie& tree, std::wstring def)
+//{
+//    long long idx = setIndex(def);
+//    std::wstring findKey{};
+//    for (Table* cur = tree.myMap.myTable[idx]; cur; cur = cur->pNext)
+//    {
+//        if (def.compare(cur->def) == 0)
+//            findKey = cur->keyWord;
+//    }
+//    return search(tree, findKey);
+//}
+//void crawl(std::wofstream& fout, Node*& cur)
+//{
+//    if (!cur)
+//        return;
+//    if (cur->isWord)
+//    {
+//        std::wstring s;
+//        for (std::wstring item : cur->word->definition)
+//            s += item;
+//        fout << L"@" << cur->word->keyWord << s << std::endl;
+//    }
+//    for (int i = 0; i < 106; ++i)
+//        crawl(fout, cur->character[i]);
+//}
+//std::vector<std::wstring> suggestWord(data* _data, std::wstring dtset, std::wstring input)
+//{
+//    if (dtset == L"Eng-Eng")
+//        return crawl(_data->ee, input);
+//    if (dtset == L"Eng-Vi")
+//        return crawl(_data->ev, input);
+//    if (dtset == L"Vi-Eng")
+//        return crawl(_data->ve, input);
+//    if (dtset == L"Emoji")
+//        return crawl(_data->emoji, input);
+//}
+//
+//std::vector<std::wstring> crawl(Trie& tree, std::wstring input)
+//{
+//    std::vector<std::wstring> suggestWord;
+//    Node* cur = tree.root;
+//    size_t len = input.length();
+//    for (int i = 0; i < len; ++i)
+//    {
+//        wchar_t letter = input[i];
+//        int index = getIndex(letter);
+//        cur = cur->character[index];
+//        if (!cur)
+//            return suggestWord;
+//    }
+//    for (int i = 0; i < 155; ++i)
+//    {
+//        crawl(cur->character[i], suggestWord);
+//    }
+//
+//    return suggestWord;
+//}
+//
+//void crawl(Node*& cur, std::vector<std::wstring>& word)
+//{
+//    if (!cur)
+//        return;
+//    if (cur->isWord)
+//    {
+//        std::wstring s;
+//        word.push_back(cur->word->keyWord);
+//    }
+//    for (int i = 0; i < 106; ++i)
+//        crawl(cur->character[i], word);
+//}

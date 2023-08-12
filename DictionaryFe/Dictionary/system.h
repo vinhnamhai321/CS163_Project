@@ -8,9 +8,9 @@ struct data
 	assetManager* _assets;
 	stateMachine* _states;
 	sf::RenderWindow* _window;
-	Trie ee, ev, ve;
-	bool eeDone, evDone, veDone;
-	std::vector<WordDef> eeKeyword, evKeyword, veKeyword;
+	Trie ee, ev, ve, emoji;
+	bool eeDone, evDone, veDone, emojiDone;
+	std::vector<WordDef> eeKeyword, evKeyword, veKeyword, emojiIcon;
 	data()
 	{
 		_assets = new assetManager;

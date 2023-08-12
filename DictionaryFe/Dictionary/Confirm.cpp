@@ -104,6 +104,15 @@ void Confirm::update()
 			std::ofstream removeFile("Resource\\RemoveWord.txt");
 			removeFile.clear();
 			removeFile.close();
+			std::ofstream EEFile(EEADD);
+			EEFile.clear();
+			EEFile.close();
+			std::ofstream EVFile(EVADD);
+			EVFile.clear();
+			EVFile.close();
+			std::ofstream VEFile(VEADD);
+			VEFile.clear();
+			VEFile.close();
 			
 			_data->_states->addState(new HomePage(_data), 1);
 		}

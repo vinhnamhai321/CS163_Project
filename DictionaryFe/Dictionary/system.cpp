@@ -7,6 +7,7 @@ System::System() : _data(new data)
 	_data->eeDone = 0;
 	_data->evDone = 0;
 	_data->veDone = 0;
+	_data->emojiDone = 0;
 	_data->_window->create(sf::VideoMode(1600, 900), "Dictionary", sf::Style::Default);
 	_data->_states->addState(new Loading(_data));
 	run();
@@ -56,11 +57,14 @@ void System::run()
 		}
 #pragma omp section
 		{
-			if (!_data->veDone)
+			if (!_data->veDone && !_data->emojiDone)
 			{
 				_data->ve.loadDataSet(VE, _data->veKeyword);
 				_data->ve.loadDataSet(VEADD, _data->veKeyword);
 				_data->veDone = 1;
+				_data->emoji.loadDataSet(EMOJI, _data->emojiIcon);
+				_data->emojiDone = 1;
+
 			}
 		}
 	}
