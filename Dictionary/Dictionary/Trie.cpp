@@ -497,3 +497,105 @@ void crawl(Node*& cur, std::vector<std::wstring>& word)
     for (int i = 0; i < 106; ++i)
         crawl(cur->character[i], word);
 }
+
+WordDef* edit(int data, std::wstring keyword)
+{
+    if (data == 1)
+        return editWord(ee, keyword);
+    if (data == 2)
+        return editWord(ev, keyword);
+    if (data == 3)
+        return editWord(ve, keyword);
+    if (data == 4)
+        return editWord(emoji, keyword);
+}
+
+WordDef* editWord(Trie& tree, std::wstring keyword)
+{
+    WordDef* word_in_tree = searchKeyWord(tree, keyword);
+    WordDef* word;
+    word->keyWord = keyword;
+    bool option = 0;
+    if(option)
+    {
+        std::wstring new_def;
+        std::wcin >> new_def;
+        word->definition.push_back(new_def);
+        tree.myMap.push(new_def, keyword);
+    }
+    else
+    {
+        bool is_editted = false;
+        size_t len = word_in_tree->definition.size();
+        for(int i = 0; i < len; i++)
+        {
+            int choice; std::wcin >> choice;
+            switch(choice)
+            {
+                case 1:
+                {
+                    std::wcin >> word_in_tree->definition[i];
+                    tree.myMap.push(word_in_tree->definition[i], keyword);
+                    break;
+                }
+                case 2:
+                {
+                    word_in_tree->definition[i].erase();
+                    break;
+                }
+            }
+        }
+        if(!is_editted) return nullptr;
+        word = word_in_tree;
+        
+    }
+    return word;
+}
+
+void build_edit_trie(Trie& edit_tree, int data, std::wstring keyword)
+{
+    Node* cur = edit_tree.root;
+    size_t len = keyword.length();
+    for (int i = 0; i < len; i++)
+    {
+        wchar_t letter = keyword[i];
+        int index = getIndex(letter);
+        if (!cur->character[index])
+            cur->character[index] = new Node;
+        cur = cur->character[index];
+    }
+    if (cur)
+    {
+        cur->isWord = 1;
+        cur->word = edit(data, keyword);
+    }
+}
+
+void export_edit_file(std::wstring path, std::wstring keyword){
+    std::wofstream fout(path);
+    if (!fout.is_open())
+        std::wcout << "Error to load file\n";
+    int data; std::wcin >> data;
+    WordDef* word = edit(data, keyword);
+    fout << "@" << word->keyWord << std::endl;
+    size_t len = word->definition.size();
+    for(int i = 0; i < len; i++)
+        fout << "- " << word->definition[i] << std::endl;
+}
+
+void remove(Trie& tree, std::wstring keyword)
+{
+    Node* cur = tree.root;
+    size_t len = keyword.length();
+    for(int i = 0; i < len; i++)
+    {
+        wchar_t letter = keyword[i];
+        int index = getIndex(letter);
+        cur = cur->character[index];
+        if(!cur && cur->word->keyWord == keyword){
+            break;
+        }
+    }
+    if(!cur) return;
+    delete cur;
+}
