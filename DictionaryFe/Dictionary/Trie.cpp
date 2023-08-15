@@ -22,7 +22,27 @@ void Trie::buildTrie(std::wstring keyWord, std::vector<std::wstring> wordDef)
 	}
 }
 
-void Trie::loadDataSet(std::string path, std::vector<WordDef> &word)
+void Trie::editWord(std::wstring keyWord, std::vector<std::wstring> wordDef)
+{
+    Node* cur = root;
+    size_t len = keyWord.length();
+    for (int i = 0; i < len; i++)
+    {
+        wchar_t letter = keyWord[i];
+        int index = getIndex(letter);
+        cur = cur->character[index];
+        if (!cur && cur->word->keyWord == keyWord) {
+            break;
+        }
+    }
+    if (!cur) return;
+    cur->isEdit = 1;
+    delete cur->editedWord;
+    cur->editedWord = new WordDef(keyWord, wordDef);
+}
+
+
+void Trie::loadDataSet(std::string path, std::vector<WordDef> &word, HashMap& myMap, bool isEdit)
 {	
 	std::wifstream fin(path);
     std::locale loc(std::locale(), new std::codecvt_utf8<wchar_t>);
@@ -41,12 +61,22 @@ void Trie::loadDataSet(std::string path, std::vector<WordDef> &word)
             {
                 def = get.substr(2, get.length() - 2);
             }
-            wordDef.push_back(def);
+            if (!isEdit)
+            {
+                myMap.push(def, keyWord);
+            }
+            wordDef.push_back(get);
         }
-		buildTrie(keyWord, wordDef);	//create new key word in trie
-        WordDef w(keyWord, wordDef);
-        word.push_back(w);
-
+        if (isEdit)
+        {
+            editWord(keyWord, wordDef);
+        }
+        else
+        {
+            buildTrie(keyWord, wordDef);	//create new key word in trie
+            WordDef w(keyWord, wordDef);
+            word.push_back(w);
+        }
 	}
     fin.close();
 
@@ -365,7 +395,12 @@ WordDef* search(Trie tree, std::wstring keyWord)
 	}
 	if (!cur->isWord)
 		return nullptr;
+    if (cur->isEdit)
+    {
+        return cur->editedWord;
+    }
 	return cur->word;
 }
+
 
 

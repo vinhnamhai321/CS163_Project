@@ -8,6 +8,10 @@
 #define EEADD "Resource\\ENG-ENGaddWord.txt"
 #define VEADD "Resource\\VI-ENGaddWord.txt"
 #define EMOJIADD "Resource\\EmojiaddWord.txt"
+#define EVEDIT "Resource\\ENG-VIeditWord.txt"
+#define EEEDIT "Resource\\ENG-ENGeditWord.txt"
+#define VEEDIT "Resource\\VI-ENGeditWord.txt"
+#define EMOJIEDIT "Resource\\EmojieditWord.txt"
 enum
 {
 	HELVETICA_BOLD = 0, LIGHT, CHIVOMONO_LIGHT, CHIVOMONO_REGULAR, KANIT, MONTSERRAT_EXTRABOLD,DICTIONARY_ICON, SEARCH_ICON, DOWN_ARR, BACK_ARR,

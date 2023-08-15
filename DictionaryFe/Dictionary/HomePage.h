@@ -72,6 +72,10 @@ private:
 	sf::Text suggest[5];
 	bool suggestHover[5];
 	bool suggestClick[5];
+
+	sf::Text option;
+	bool optionHover;
+	bool optionClick;
 public:
 	HomePage(data* data);
 	~HomePage();

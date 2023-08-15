@@ -94,7 +94,6 @@ void Confirm::update()
 		}
 		if (_status == L"Are you sure to reset the app?")
 		{
-			
 			std::ofstream historyFile("Resource\\History.txt");
 			historyFile.clear();
 			historyFile.close();
@@ -104,7 +103,38 @@ void Confirm::update()
 			std::ofstream removeFile("Resource\\RemoveWord.txt");
 			removeFile.clear();
 			removeFile.close();
-			
+			resetAddWord(_data->ee, L"Resource\\Eng-EngaddWord.txt");
+			std::wofstream EEaddFile("Resource\\Eng-EngaddWord.txt");
+			EEaddFile.clear();
+			EEaddFile.close();
+			resetAddWord(_data->ev, L"Resource\\Eng-ViaddWord.txt");
+			std::wofstream EVaddFile("Resource\\Eng-ViaddWord.txt");
+			EVaddFile.clear();
+			EVaddFile.close();
+			resetAddWord(_data->ve, L"Resource\\Vi-EngaddWord.txt");
+			std::wofstream VEaddFile("Resource\\Vi-EngaddWord.txt");
+			VEaddFile.clear();
+			VEaddFile.close();
+			resetAddWord(_data->emoji, L"Resource\\EmojiaddWord.txt");
+			std::wofstream emojiaddFile("Resource\\EmojiaddWord.txt");
+			emojiaddFile.clear();
+			emojiaddFile.close();
+			resetEditWord(_data->ee, L"Resource\\Eng-EngeditWord.txt");
+			std::wofstream EEeditFile("Resource\\Eng-EngeditWord.txt");
+			EEeditFile.clear();
+			EEeditFile.close();
+			resetEditWord(_data->ev, L"Resource\\Eng-VieditWord.txt");
+			std::wofstream EVeditFile("Resource\\Eng-VieditWord.txt");
+			EVeditFile.clear();
+			EVeditFile.close();
+			resetEditWord(_data->ve, L"Resource\\Vi-EngeditWord.txt");
+			std::wofstream VEeditFile("Resource\\Vi-EngeditWord.txt");
+			VEeditFile.clear();
+			VEeditFile.close();
+			resetEditWord(_data->emoji, L"Resource\\EmojieditWord.txt");
+			std::wofstream emojieditFile("Resource\\EmojieditWord.txt");
+			emojieditFile.clear();
+			emojieditFile.close();
 			_data->_states->addState(new HomePage(_data), 1);
 		}
 		removeWordFile.close();

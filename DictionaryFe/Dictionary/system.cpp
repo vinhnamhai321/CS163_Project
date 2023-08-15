@@ -41,8 +41,9 @@ void System::run()
 		{
 			if (!_data->eeDone)
 			{
-				_data->ee.loadDataSet(EE, _data->eeKeyword);
-				_data->ee.loadDataSet(EEADD, _data->eeKeyword);
+				_data->ee.loadDataSet(EE, _data->eeKeyword, _data->eeMap);
+				_data->ee.loadDataSet(EEADD, _data->eeKeyword, _data->eeMap);
+				_data->ee.loadDataSet(EEEDIT, _data->eeKeyword, _data->eeMap, 1);
 				_data->eeDone = 1;
 			}
 		}
@@ -50,8 +51,9 @@ void System::run()
 		{
 			if (!_data->evDone)
 			{
-				_data->ev.loadDataSet(EV, _data->evKeyword);
-				_data->ev.loadDataSet(EVADD, _data->evKeyword);
+				_data->ev.loadDataSet(EV, _data->evKeyword, _data->evMap);
+				_data->ev.loadDataSet(EVADD, _data->evKeyword, _data->evMap);
+				_data->ee.loadDataSet(EVEDIT, _data->evKeyword, _data->evMap, 1);
 				_data->evDone = 1;
 			}
 		}
@@ -59,11 +61,13 @@ void System::run()
 		{
 			if (!_data->veDone && !_data->emojiDone)
 			{
-				_data->ve.loadDataSet(VE, _data->veKeyword);
-				_data->ve.loadDataSet(VEADD, _data->veKeyword);
+				_data->ve.loadDataSet(VE, _data->veKeyword, _data->veMap);
+				_data->ve.loadDataSet(VEADD, _data->veKeyword, _data->veMap);
+				_data->ee.loadDataSet(VEEDIT, _data->veKeyword, _data->veMap, 1);
 				_data->veDone = 1;
-				_data->emoji.loadDataSet(EMOJI, _data->emojiKeyword);
-				_data->emoji.loadDataSet(EMOJIADD, _data->emojiKeyword);
+				_data->emoji.loadDataSet(EMOJI, _data->emojiKeyword, _data->emojiMap);
+				_data->emoji.loadDataSet(EMOJIADD, _data->emojiKeyword, _data->emojiMap);
+				_data->ee.loadDataSet(EMOJIEDIT, _data->emojiKeyword, _data->emojiMap, 1);
 				_data->emojiDone = 1;
 			}
 		}

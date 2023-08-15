@@ -60,7 +60,7 @@ void Loading::update()
 	}
 	if (_data->eeDone && _data->evDone && _data->veDone && _data->emojiDone)
 	{
-		_data->_states->addState(new HomePage(_data));
+		_data->_states->addState(new HomePage(_data), 1);
 	}
 }
 void Loading::draw()

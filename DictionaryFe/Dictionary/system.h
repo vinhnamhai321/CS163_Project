@@ -11,6 +11,7 @@ struct data
 	Trie ee, ev, ve, emoji;
 	bool eeDone, evDone, veDone, emojiDone;
 	std::vector<WordDef> eeKeyword, evKeyword, veKeyword, emojiKeyword;
+	HashMap eeMap, evMap, veMap, emojiMap;
 	data()
 	{
 		_assets = new assetManager;

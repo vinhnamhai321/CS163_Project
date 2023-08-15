@@ -151,7 +151,7 @@ void HomePage::init()
 	statusOn = 0;
 	status = createText(L"Not found!",
 		searchBox.getPosition().x - searchBox.getSize().x / 2 + 10,
-		searchBox.getPosition().y + 50, 20);
+		searchBox.getPosition().y + 30, 20);
 	status.setFont(_data->_assets->getFont(CHIVOMONO_LIGHT));
 	status.setFillColor(sf::Color::Red);
 
@@ -163,7 +163,7 @@ void HomePage::init()
 	//Set suggestBox
 	suggestBox = createRectangleShape(searchBox.getLocalBounds().width, 300,
 		searchBox.getPosition().x - searchBox.getSize().x / 2,
-		searchBox.getPosition().y + 55);
+		searchBox.getPosition().y + 60);
 	suggestBox.setOutlineThickness(3);
 	suggestBox.setOutlineColor(sf::Color(0, 0, 0, 255));
 
@@ -176,6 +176,13 @@ void HomePage::init()
 		suggest[i].setFont(_data->_assets->getFont(CHIVOMONO_LIGHT));
 		suggest[i].setFillColor(sf::Color::Black);
 	}
+
+	//Set option
+	option = createText(L"Search Word",
+		searchBox.getPosition().x - searchBox.getSize().x / 2,
+		searchBox.getPosition().y - 70, 30);
+	option.setFont(_data->_assets->getFont(HELVETICA_BOLD));
+	option.setFillColor(sf::Color::Black);
 }
 void HomePage::processInput()
 {
@@ -210,6 +217,7 @@ void HomePage::processInput()
 				quizClick = (quizHover ? 1 : 0);
 				searchIconClick = (searchIconHover ? 1 : 0);
 				randomClick = (randomHover ? 1 : 0);
+				optionClick = (optionHover ? 1 : 0);
 				for (int i = 0; i < 5; i++)
 				{
 					if (!getSearchBoxText.empty() && suggestHover[i])
@@ -264,7 +272,10 @@ void HomePage::processInput()
 				}
 				blink = 1;
 			}
-			getSuggest = suggestWord(_data, getDataSet, getSearchBoxText);
+			if (getSearchBoxText != L"")
+			{
+				getSuggest = suggestWord(_data, getDataSet, getSearchBoxText);
+			}
 			for (int i = 0; i < 5 && i < getSuggest.size(); i++)
 			{
 				suggest[i].setString(getSuggest[i]);
@@ -299,6 +310,7 @@ void HomePage::processInput()
 		searchIconHover = isHover(searchIconBox, *_data->_window);
 		downArrHover = isHover(downArr, *_data->_window);
 		randomHover = isHover(random, *_data->_window);
+		optionHover = isHover(option, *_data->_window);
 		
 		for (int i = 0; i < 4; i++)
 		{
@@ -325,6 +337,7 @@ void HomePage::update()
 	(resetHover ? reset.setFillColor(sf::Color(255, 255, 255, 200)) : reset.setFillColor(sf::Color::White));
 	(quizHover ? quiz.setFillColor(sf::Color(255, 255, 255, 200)) : quiz.setFillColor(sf::Color::White));
 	(randomHover ? random.setFillColor(sf::Color(10, 123, 233, 200)) : random.setFillColor(sf::Color(10, 123, 233, 255)));
+	(optionHover ? option.setFillColor(sf::Color(0, 0, 0, 100)) : option.setFillColor(sf::Color::Black));
 	
 	(searchIconHover ? searchIconBox.setFillColor(sf::Color(10, 123, 233, 150)) : searchIconBox.setFillColor(sf::Color(10, 123, 233, 255)));
 	(downArrHover ? downArr.setColor(sf::Color(255, 255, 255, 100)) : downArr.setColor(sf::Color::White));
@@ -406,6 +419,16 @@ void HomePage::update()
 	}
 	if (searchIconClick)
 	{
+		if (option.getString() == L"Search Definition")
+		{
+			std::wstring tmp;
+			tmp = searchDefinition(getDataset(dataSet.getString(), _data), getSearchBoxText
+				, getMap(dataSet.getString(), _data));
+			if (tmp != L"")
+			{
+				getSearchBoxText = tmp;
+			}
+		}
 		std::wstring dtset = dataSet.getString();
 		std::wstring line = getSearchBoxText + L"(" + dtset + L")";
 		if (!existWord(line , L"Resource\\RemoveWord.txt") && search(getDataset(dataSet.getString(), _data), getSearchBoxText) != nullptr)
@@ -423,6 +446,18 @@ void HomePage::update()
 		}
 		searchIconClick = 0;
 	}
+	if (optionClick)
+	{
+		optionClick = 0;
+		if (option.getString() == L"Search Word")
+		{
+			option.setString(L"Search Definition");
+		}
+		else
+		{
+			option.setString(L"Search Word");
+		}
+	}
 }
 void HomePage::draw()
 {
@@ -439,6 +474,7 @@ void HomePage::draw()
 	_data->_window->draw(dataSet);
 	_data->_window->draw(downArr);
 	_data->_window->draw(random);
+	_data->_window->draw(option);
 	if (getSearchBoxText != L"")
 	{
 		_data->_window->draw(suggestBox);

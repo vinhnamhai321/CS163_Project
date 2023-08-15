@@ -140,8 +140,24 @@ void addWord(std::wstring keyWord, std::vector<std::wstring> wordDef, std::wstri
 	tree.buildTrie(keyWord, wordDef);
 
 	// Save to file
-	// Write as append mode to "TreeName_addWord.txt"
 	std::wofstream file(L"Resource\\" + dataset + L"addWord.txt", std::ios::app);
+	std::locale loc(std::locale(), new std::codecvt_utf8<wchar_t>);
+	file.imbue(loc);
+	file << '@' << keyWord << '\n';
+	for (const std::wstring& def : wordDef)
+		file << def << '\n';
+}
+
+void editWord(std::wstring keyWord, std::vector<std::wstring> wordDef, std::wstring dataset, data* _data) {
+	// Process keyWord to be lowercase
+	for (wchar_t& c : keyWord)
+		c = towlower(c);
+
+	Trie tree = getDataset(dataset, _data);
+	tree.editWord(keyWord, wordDef);
+
+	// Save to file
+	std::wofstream file(L"Resource\\" + dataset + L"editWord.txt", std::ios::app);
 	std::locale loc(std::locale(), new std::codecvt_utf8<wchar_t>);
 	file.imbue(loc);
 	file << '@' << keyWord << '\n';
@@ -214,4 +230,113 @@ void crawl(Node*& cur, std::vector<std::wstring>& word)
 	}
 	for (int i = 0; i < 106; ++i)
 		crawl(cur->character[i], word);
+}
+
+HashMap &getMap(std::wstring dataset, data* _data)
+{
+	if (dataset == L"Eng-Eng")
+	{
+		return _data->eeMap;
+	}
+	else if (dataset == L"Eng-Vi")
+	{
+		return _data->evMap;
+	}
+	else if (dataset == L"Vi-Eng")
+	{
+		return _data->veMap;
+	}
+	else if (dataset == L"Emoji")
+	{
+		return _data->emojiMap;
+	}
+}
+
+std::wstring searchDefinition(Trie tree, std::wstring def, HashMap& myMap)
+{
+	long long idx = setIndex(def);
+	std::wstring findKey{};
+	for (Table* cur = myMap.myTable[idx]; cur; cur = cur->pNext)
+	{
+		if (def.compare(cur->def) == 0)
+			findKey = cur->keyWord;
+	}
+	return findKey;
+}
+
+void remove(Trie& tree, std::wstring keyword)
+{
+	Node* cur = tree.root;
+	size_t len = keyword.length();
+	for (int i = 0; i < len; i++)
+	{
+		wchar_t letter = keyword[i];
+		int index = getIndex(letter);
+		cur = cur->character[index];
+		if (!cur && cur->word->keyWord == keyword) {
+			break;
+		}
+	}
+	if (!cur) return;
+	cur->isWord = 0;
+	delete cur->word;
+}
+void resetAddWord(Trie tree, std::wstring path)
+{
+	std::wifstream fin(path);
+	std::locale loc(std::locale(), new std::codecvt_utf8<wchar_t>);
+	fin.imbue(loc);
+	std::wstring get;		
+	getline(fin, get);
+	while (!fin.eof())
+	{
+		std::vector<std::wstring> wordDef;
+		std::wstring keyWord = get.substr(1, get.length() - 1);	//remove '@' character from key word
+		remove(tree, keyWord);
+		getline(fin, get);
+		for (; !fin.eof() && get[0] != '@'; getline(fin, get))	
+		{
+
+		}
+	}
+	fin.close();
+}
+
+void removeEditWord(Trie& tree, std::wstring keyword)
+{
+	Node* cur = tree.root;
+	size_t len = keyword.length();
+	for (int i = 0; i < len; i++)
+	{
+		wchar_t letter = keyword[i];
+		int index = getIndex(letter);
+		cur = cur->character[index];
+		if (!cur && cur->word->keyWord == keyword) {
+			break;
+		}
+	}
+	if (!cur) return;
+	cur->isEdit = 0;
+	delete cur->editedWord;
+}
+
+void resetEditWord(Trie tree, std::wstring path)
+{
+	std::wifstream fin(path);
+	std::locale loc(std::locale(), new std::codecvt_utf8<wchar_t>);
+	fin.imbue(loc);
+	std::wstring get;
+	getline(fin, get);
+	while (!fin.eof())
+	{
+		std::vector<std::wstring> wordDef;
+		std::wstring keyWord = get.substr(1, get.length() - 1);	//remove '@' character from key word
+		removeEditWord(tree, keyWord);
+		getline(fin, get);
+		for (; !fin.eof() && get[0] != '@'; getline(fin, get))
+		{
+
+		}
+	}
+	fin.close();
 }

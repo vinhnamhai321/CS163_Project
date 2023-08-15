@@ -24,7 +24,6 @@ private:
 	bool backArrHover;
 	bool backArrClick;
 	
-
 	sf::Text keywordLabel;
 	bool keywordHover;
 	bool keywordClick;
@@ -57,6 +56,7 @@ private:
 	bool submitHover;
 	bool submitClick;
 	
+	sf::Text dataset;
 
 public:
 	CreateWord(data* data, std::wstring type, std::wstring dtset = L"", std::wstring word = L"", std::vector<std::wstring> def = {});

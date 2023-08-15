@@ -131,6 +131,12 @@ void CreateWord::init()
 	submit.setFont(_data->_assets->getFont(MONTSERRAT_EXTRABOLD));
 	submit.setFillColor(sf::Color::White);
 
+	//Set dataset
+	dataset = createText(_dtset,
+		keywordBox.getPosition().x + 10,
+		keywordBox.getPosition().y + 80, 40);
+	dataset.setFont(_data->_assets->getFont(HELVETICA_BOLD));
+	dataset.setFillColor(sf::Color::Black);
 }
 void CreateWord::processInput()
 {
@@ -421,6 +427,16 @@ void CreateWord::update()
 			addWord(getKeyword, d, _dtset, _data);
 			_data->_states->removeState();
 		}
+		if (_type == L"Edit word")
+		{
+			std::vector<std::wstring> d;
+			for (int i = 0; i < maxdefBox; i++)
+			{
+				d.push_back(getDef[i]);
+			}
+			editWord(getKeyword, d, _dtset, _data);
+			_data->_states->removeState();
+		}
 		submitClick = 0;
 	}
 	//OverFlow
@@ -458,7 +474,7 @@ void CreateWord::draw()
 	_data->_window->draw(keyword);
 	_data->_window->draw(defLabel);
 	_data->_window->draw(addDef);
-	
+	_data->_window->draw(dataset);
 	for (int i = 0; i < maxdefBox; i++)
 	{
 		_data->_window->draw(defBox[i]);
