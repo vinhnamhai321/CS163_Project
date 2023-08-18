@@ -425,6 +425,8 @@ void CreateWord::update()
 				d.push_back(getDef[i]);
 			}
 			addWord(getKeyword, d, _dtset, _data);
+			std::wstring line = getKeyword + L"(" + _dtset + L")";
+			removeWord(line, L"Resource\\RemoveWord.txt");
 			_data->_states->removeState();
 		}
 		if (_type == L"Edit word")
