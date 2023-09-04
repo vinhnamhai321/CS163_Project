@@ -1,0 +1,403 @@
+\documentclass[sn-mathphys,Numbered]{sn-jnl}%
+
+%% Overleaf package
+\usepackage[vietnamese, main=english]{babel}
+\usepackage{parskip}
+\usepackage{graphicx}%
+\usepackage{multirow}%
+\usepackage{amsmath,amssymb,amsfonts,amsthm}%
+\usepackage{mathrsfs}%
+\usepackage[title]{appendix}%
+\usepackage{textcomp}%
+\usepackage{manyfoot}%
+\usepackage{booktabs}%
+\usepackage{algorithm, algorithm, algpseudocode}%
+\usepackage{caption, csquotes}%
+\usepackage{enumitem}%
+
+\setboolean{@twoside}{false}
+\geometry{
+	top=30mm,
+	bottom=30mm,
+	left=20mm,
+	right=20mm
+}
+
+% Set header package
+\usepackage{scrlayer-scrpage}
+\pagestyle{scrheadings}
+\lohead[]{}
+
+\begin{document}	
+% FRONT PAGE COVERING
+% Supress page covering
+\thispagestyle{empty}
+
+\noindent
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{LOGO HCMUS.png}
+\end{figure}
+
+\vspace{1.5cm}
+
+\noindent
+{\sffamily\fontsize{30}{35}\selectfont Group Project - Dictionary\par}
+
+\vspace{0.5cm}
+
+\noindent
+\textcolor{solarized@cyan}{\sffamily\large Group 5}
+
+\sffamily 22125019 - \foreignlanguage{vietnamese}{Nguyễn Đức Duy}
+
+\sffamily 22125030 - \foreignlanguage{vietnamese}{Tô Ngọc Hưng}
+
+\sffamily 22125096 - \foreignlanguage{vietnamese}{Đoàn Công Thành}
+
+\sffamily 22125115 - \foreignlanguage{vietnamese}{Ngô Hoàng Tuấn}
+
+\vspace{3cm}
+
+\begin{flushright}
+	\sffamily\textbf{Department of Technology}
+	\vspace{-4px}
+	
+	\textbf{Advanced Program in Computer Science}
+	\vspace{-4px}
+	
+	\textbf{Ho Chi Minh University of Sciences}
+	\vspace{0px}
+	\vfill
+
+	Supervisor: \foreignlanguage{vietnamese}{Trương Phước Lộc}, \foreignlanguage{vietnamese}{Hồ Tuấn Thanh}
+	
+	\vspace{\baselineskip}
+
+	Datum: 04.~08.~2023
+\end{flushright}
+
+\newpage
+
+% ----- END OF PAGE COVER -----
+
+% Set header to "Group 5"
+\lohead[]{Group 5}
+
+% Set font to default
+\normalfont
+
+\tableofcontents
+
+
+\section{Abstract}
+
+A Dictionary is a group project that aims to provide users with a comprehensive and easy-to-use tool for looking up the definitions, keywords, examples of words, quizzes and many mores.
+
+The purpose of this group project is to help users improve their vocabulary and language skills by providing them with quick and accurate information about the words they are interested in.
+
+The key features of the Word Dictionary are user-friendly interface, a large database of words, and the ability to customize the dictionary how users wanted it is to be.
+
+By providing users with a reliable and convenient way to learn more about words, the Word Dictionary aims to solve the problem of limited vocabulary and language proficiency.
+
+\section{Introduction}
+
+The Word Dictionary is a group project that aims to create a dictionary of words that quick and easy to use. The project’s background is providing free dictionary application that can help users search and learn not commonly used or difficulty words on daily basis or playing quizzes to learn new words. The motivation behind the project is to help people expand their vocabulary and improve their communication skills. The objectives of the project are to create a comprehensive dictionary of words that are not commonly used, provide definitions for each word, and providing quizzes to user to learn at the end of the day.
+
+This project is important because it makes us to do group project as a teamwork instead of a individual, learning about communication between peoples in our team. Also teamwork in this group project helps us learning new things during the project on the long term.
+
+\section{Group Information}
+
+The group ID for this project is group 5. Including group members are
+
+\begin{enumerate}
+	\item 22125019 - \foreignlanguage{vietnamese}{Nguyễn Đức Duy}
+	
+	\item 22125030 - \foreignlanguage{vietnamese}{Tô Ngọc Hưng}
+	
+	\item 22125096 - \foreignlanguage{vietnamese}{Đoàn Công Thành}
+	
+	\item 22125115 - \foreignlanguage{vietnamese}{Ngô Hoàng Tuấn}
+\end{enumerate}
+ 
+\foreignlanguage{vietnamese}{Đoàn Công Thành} is the project manager and is responsible for overseeing the project and ensuring that all tasks are completed on time
+
+\foreignlanguage{vietnamese}{Ngô Hoàng Tuấn}, \foreignlanguage{vietnamese}{Tô Ngọc Hưng} are the developer, implementing the software. And is responsible for searching the data and managing the database of words.
+
+\foreignlanguage{vietnamese}{Nguyễn Đức Duy} is the user interface designer and is responsible for creating a user-friendly interface for the Word Dictionary.
+
+The individual contribution percentages for each member are as follows: \foreignlanguage{vietnamese}{Đoàn Công Thành}: $25\%$, \foreignlanguage{vietnamese}{Nguyễn Đức Duy}: $25\%$, \foreignlanguage{vietnamese}{Tô Ngọc Hưng}: $25\%$, and \foreignlanguage{vietnamese}{Ngô Hoàng Tuấn}: $25\%$.
+
+\section{Project Architecture}
+
+This project using easy to access architecture, including only three basic folders: Data-set, Dictionary, DictionaryFE.
+
+Inside the Data-set folder is the dictionary data for the application to be running normally. Containing inside them are the files "EE\_final.txt", "EV\_final.txt", "VE\_final.txt", "emoji.txt",.
+
+Inside the Dictionary is containing the back-bone of the application, contains the code to process the data, searching, and return everything for the front-end or the main user interface to be interacted with.
+
+Lastly, inside the DictionaryFE is the code for Graphic User Interface, all assets, fonts, image is inside that folder to be used in the dictionary.
+
+Why our choice is using that architecture is it is easy to maintain the flow of the project instead of combining all the source code into one folder and hard to manage them, we separate the back-end and front-end into its folders. Additionally, in the beginning of the project, some members don't know how to code front end, so we have use this style of architecture to keep our member easy to manage.
+
+
+\section{Implementation Details}
+
+This project use a lots of structures/classes, and every of them are using each other to make this application working, without one of them and it won't work anymore as that structure is important. List of structures/classes that this project is using are
+
+\begin{enumerate}
+	\item \lstinline|struct WordDef| - This structure will used as a Word Node (or a Node holding data for that word); containing word, definition inside them.
+	\begin{lstlisting}
+struct WordDef {
+	//constructor
+	WordDef(std::wstring KeyWord, std::vector<std::wstring> WordDef) :keyWord(KeyWord), definition(WordDef) {}
+	//function
+	std::wstring keyWord;
+	std::vector<std::wstring> definition;
+};
+	\end{lstlisting}
+	
+	\item \lstinline|class Node| - This is a node for Trie will be covered on the next item. Each node will contain children, a boolean to check if it is the end of a word or not and WordDef struct.
+	\begin{lstlisting}
+struct Node {
+	Node* character[155]{};
+	bool isWord{};
+	WordDef* word{};
+};
+	\end{lstlisting}
+	
+	\item \lstinline|class Trie| - A main data structure that this project is using, its really versatile for containing string and fast make it is a good data structure to use in this dictionary project. Using Node as a pointer to the root, it doesn't take as much memory unless you need it.
+	\begin{lstlisting}
+class Trie {
+	public:
+	//function
+	void deleteTrie(Node*& root);
+	void buildTrie(std::wstring keyWord, std::vector<std::wstring> wordDef);
+	void loadDataSet(std::string path);		//load EV and EE file
+	Node* root = new Node;
+	
+	//Map
+	HashMap myMap;
+};
+	\end{lstlisting}
+	
+	\item \lstinline|struct Table| - A node for the next structure, Hashmap, containing only the key value is Word and the next pointer as a linked list.
+	\begin{lstlisting}
+struct Table {
+	//constructor
+	Table(std::wstring Def, std::wstring KeyWord, Table* pointer) :def(Def), keyWord(KeyWord), pNext(pointer) {};
+	std::wstring def, keyWord;
+	Table* pNext{};
+};	
+	\end{lstlisting}
+	
+	\item \lstinline|struct HashMap| - As the name said, this is a Hash Map or a Hash Table, this project use this for other language that Trie cannot support such as Emoji or accented Vietnamese or Slang word. So if the trie cannot support the word, HashMap could and will use as an alternative.
+	\begin{lstlisting}
+struct HashMap {
+	Table* myTable[1000001]{};
+	void push(std::wstring s, std::wstring keyWord);
+	void resolveCollision(std::wstring s, std::wstring keyWord, long long idx);
+	void clearMap();
+	std::wstring search(std::wstring s);
+};
+	\end{lstlisting}
+	
+	\item \lstinline|class Dictionary| - Lastly, the main program, that contains all key information for the program to be working. Including functions: build, run, process and serialize.
+\end{enumerate}
+
+\section{Technical Problems and Solutions}
+
+A project that never be completed if it doesn't have any problems, if a project is easy, there must be something wrong during the process.
+
+At the beginning of the project, the first problem occurs is how do this project find and store the data and what data structure do we use to contains the data itself? - It took us member nearly a whole week to sorted out the problem and really finding the answer. The data we used is open-source, and have to be formatted so the application can be running properly, but since the data is different on every site, we have to took time to format it to correct input. The data structure is harder as it look, there are a lot of structure that can support string to be used in a dictionary such as Trie, Suffix Array, B-Tree, etc. But after discussing about its pros and cons about theses data structure, we came to the conclusion of Trie and HashTable are the candidate of this project. As "Implementation Details" on above, \lstinline|Trie| and \lstinline|HashTable| have that versatility and very easy to code and manage.
+
+But overall, the problems are gone on itself during the project and we came to the end of the project normally.
+
+\vspace{0.25\textheight}
+\begin{minipage}{1\textwidth}
+	\centering
+	\large\textbf{This page is intentionally left blank.\\
+		Please proceed to features demonstration on next page.}
+\end{minipage}
+
+%-- normalize pls
+\newpage
+
+\section{Features Demonstration}
+
+Word Dictionary is made easy to be use, user-friendly, here is a step-by-step explanation for such features and its functionality.
+
+\subsection{Switch Dictionary Data}
+
+You can switch dictionary data upon boot up the application by pressing the datasets left to the search bar and select the datasets you want.
+
+\begin{figure}[!htb]
+	\centering
+	\begin{minipage}{0.47\textwidth}
+		\includegraphics[width=\textwidth]{img/Data Switching/Step 1.png}
+		\caption*{Select the switch datasets}
+	\end{minipage}\hfill
+	\begin{minipage}{0.47\textwidth}
+		\includegraphics[width=\textwidth]{img/Data Switching/Step 2.png}
+		\caption*{Select the desired datasets}
+	\end{minipage}
+\end{figure}
+
+\subsection{Searching Word}
+
+The main features of Word Dictionary is able to search word, and we made it quick and easy. Start by clicking on the search bar in the middle of the screen, then the word you're looking into. Once you’ve entered your search term, hit the enter key or tap the magnifying glass icon to begin your search, and result displaying definitions and other relevant information. The app will display a list of suggestion word while you are searching.
+
+\begin{figure}[!htb]
+	\centering
+	\begin{minipage}{0.47\textwidth}
+	\includegraphics[width=\textwidth]{img/Searching/Searching.png}
+	\caption*{Example of searching "hello"}
+	\end{minipage}\hfill
+	\begin{minipage}{0.47\textwidth}
+		\includegraphics[width=\textwidth]{img/Searching/Result.png}
+		\caption*{"hello" definition}
+	\end{minipage}
+\end{figure}
+
+\subsection{Searching Word by Definition}
+
+There are word you cannot remember easily such as "pneumonoultramicroscopicsilicovolcanoconiosis", so we're implementing searching word by definition for us cannot remember word but remember its definition or relevant information about that word. Start by switch to search by definition by clicking "Search Word" above the search bar
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{img/Searching/Switch_to_definition.png}
+	\caption*{Click on "Search Word" to switch search by definition}
+\end{figure}
+
+Then search by definition.
+
+\begin{figure}[!htb]
+	\centering
+	\begin{minipage}{0.49\textwidth}
+		\includegraphics[width=\textwidth]{img/Searching/Searching_Definition.png}
+	\end{minipage}\hfill
+	\begin{minipage}{0.49\textwidth}
+		\includegraphics[width=\textwidth]{img/Searching/Result_Definition.png}
+	\end{minipage}
+\end{figure}
+
+\subsection{Add Word}
+Add word is also quick and easy in this application. Start by go to home menu and click on "Add new word" on top bar, then fill in information of your new word needed to be add on selected dictionary.
+
+\begin{figure}[!htb]
+	\centering
+	\begin{minipage}{0.49\textwidth}
+		\includegraphics[width=\textwidth]{img/Add Word/Step 1.png}
+		\caption*{Click on "Add new word"}
+	\end{minipage}\hfill
+	\begin{minipage}{0.49\textwidth}
+		\includegraphics[width=\textwidth]{img/Add Word/Step 2.png}
+		\caption*{Example of filling "trie" definition}
+	\end{minipage}
+\end{figure}
+
+
+After click on submit, you will result on that word page.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{img/Add Word/Step 3.png}
+	\caption*{After click on "Submit" button}
+\end{figure}
+
+\subsection{Editing Word}
+Editing word as is easy as Add word. Start by search the word you needed to edit, then open that word page. Then click on "Edit word" on top bar. Edit information of that word then click "Submit" button.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{img/Edit Word/Step 1.png}
+	\caption*{Click on "Edit word"}
+\end{figure}
+
+Edit your information by adding new definition or edit existed definition.
+
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.49\textwidth}
+		\includegraphics[width=\textwidth]{img/Edit Word/Step 2.png}
+	\end{minipage}\hfill
+	\begin{minipage}{0.49\textwidth}
+		\includegraphics[width=\textwidth]{img/Edit Word/Step 2_5.png}
+	\end{minipage}
+\end{figure}
+
+Then press "Submit" to save that word.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{img/Edit Word/Step 3.png}
+	\caption*{After click on "Submit" button}
+\end{figure}
+
+\subsection{Favorite list}
+
+You can save your word to a favorite list so you don't forget that word. Start by finding the word you wanted to add to favorite list, then press "Add to favorite list" on top bar" and your word will be save to favorite list.
+
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.49\textwidth}
+	\includegraphics[width=\textwidth]{img/Favorite List/Step 1.png}
+	\caption*{Click on "Add to favorite list"}
+	\end{minipage}\hfill
+	\begin{minipage}{0.49\textwidth}
+	\includegraphics[width=\textwidth]{img/Favorite List/Step 2.png}
+	\caption*{To access to favorite list}
+	\end{minipage}
+\end{figure}
+
+
+\subsection{Reset to default}
+
+Sometimes, you can make mistake in the long run like delete every words in the dictionary, edit every words you hate or adding meaningless words. You can reset the dictionary into default states like the fresh new dictionary by go to home page, and click on "Reset app" on top bar. The application will inform you that you will reset app, click on "Yes" to reset.
+
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.49\textwidth}
+		\includegraphics[width=\textwidth]{img/Reset/Step 1.png}
+	\end{minipage}\hfill
+	\begin{minipage}{0.49\textwidth}
+		\includegraphics[width=\textwidth]{img/Reset/Step 2.png}
+	\end{minipage}
+\end{figure}
+
+After reset, the word you added, edited or deleted will be undo to original states. Example the "trie" word we have added on the "Add word" section.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{img/Reset/Step 3.png}
+	\caption*{"trie" no longer exist}
+\end{figure}
+
+\subsection{Quizzes}
+
+You can play quizzes to learning new word or definition while having fun, start by clicking "Quizzes" on top bar of homepage, it will direct you to a blank page, then press "Start" to play.
+
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.49\textwidth}
+		\includegraphics[width=\textwidth]{img/Quizzes/Step 1.png}
+	\end{minipage}\hfill
+	\begin{minipage}{0.49\textwidth}
+		\includegraphics[width=\textwidth]{img/Quizzes/Step 2.png}
+	\end{minipage}
+\end{figure}
+
+Click on start to start the quizzes.
+
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.49\textwidth}
+		\includegraphics[width=\textwidth]{img/Quizzes/Step 3.png}
+	\end{minipage}\hfill
+	\begin{minipage}{0.49\textwidth}
+		\includegraphics[width=\textwidth]{img/Quizzes/Step 3_5.png}
+	\end{minipage}
+\end{figure}
+
+
+\end{document}
